@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	targetNamespace="http://omd/omdservices/ppproximity" xmlns:ppprox="http://omd/omdservices/ppproximity">
+
+	<xs:element name="cityName" type="xs:string" />
+	<xs:element name="stateCode" type="xs:string" />
+	<xs:element name="countryCode" type="xs:string" />
+	<xs:element name="latitude" type="xs:int" />
+	<xs:element name="longitude" type="xs:int" />
+	<xs:element name="rangeInMiles" type="xs:int" />
+	<xs:element name="roadInitialName" type="xs:string" />
+	<xs:element name="roadNo" type="xs:string" />
+	<xs:element name="model" type="xs:string" />
+	<xs:element name="distance" type="xs:string" />
+	<xs:element name="direction" type="xs:string" />
+	<xs:element name="milepost" type="xs:string" />
+	<xs:element name="region" type="xs:string" />
+	<xs:element name="subRegion" type="xs:string" />
+	<xs:element name="lastMsgTime" type="xs:dateTime" />
+	<xs:element name="customerId" type="xs:string" />
+	<xs:element name="productNames" type="xs:string" />
+
+	<xs:complexType name="proximityRequestType">
+		<xs:sequence>
+			<xs:element ref="ppprox:customerId" minOccurs="1" />
+			<xs:element ref="ppprox:cityName" minOccurs="0" />
+			<xs:element ref="ppprox:stateCode" minOccurs="0" />
+			<xs:element ref="ppprox:countryCode" minOccurs="0" />
+			<xs:element ref="ppprox:latitude" minOccurs="0" />
+			<xs:element ref="ppprox:longitude" minOccurs="0" />
+			<xs:element ref="ppprox:rangeInMiles" minOccurs="1" />
+			<xs:element ref="ppprox:productNames" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="proximityRequest" type="ppprox:proximityRequestType" />
+
+	<xs:complexType name="proximityResponseType">
+		<xs:sequence>
+			<xs:element ref="ppprox:roadInitialName" minOccurs="0" />
+			<xs:element ref="ppprox:roadNo" minOccurs="0" />
+			<xs:element ref="ppprox:model" minOccurs="0" />
+			<xs:element ref="ppprox:distance" minOccurs="0" />
+			<xs:element ref="ppprox:latitude" minOccurs="0" />
+			<xs:element ref="ppprox:longitude" minOccurs="0" />
+			<xs:element ref="ppprox:direction" minOccurs="0" />
+			<xs:element ref="ppprox:cityName" minOccurs="0" />
+			<xs:element ref="ppprox:stateCode" minOccurs="0" />
+			<xs:element ref="ppprox:milepost" minOccurs="0" />
+			<xs:element ref="ppprox:region" minOccurs="0" />
+			<xs:element ref="ppprox:subRegion" minOccurs="0" />
+			<xs:element ref="ppprox:lastMsgTime" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="proximityResponse" type="ppprox:proximityResponseType" />
+
+	<xs:complexType name="cityType">
+		<xs:sequence>
+			<xs:element ref="ppprox:cityName" minOccurs="1" />
+			<xs:element ref="ppprox:latitude" minOccurs="1" />
+			<xs:element ref="ppprox:longitude" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="city" type="ppprox:cityType" />
+
+	<xs:complexType name="stateType">
+		<xs:sequence>
+			<xs:element ref="ppprox:stateCode" minOccurs="1" />
+			<xs:element ref="ppprox:city" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="state" type="ppprox:stateType" />
+
+	<xs:complexType name="countryType">
+		<xs:sequence>
+			<xs:element ref="ppprox:countryCode" minOccurs="1" />
+			<xs:element ref="ppprox:state" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="country" type="ppprox:countryType" />
+
+</xs:schema>

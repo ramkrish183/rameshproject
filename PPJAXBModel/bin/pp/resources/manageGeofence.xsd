@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	targetNamespace="http://omd/omdservices/manageGeofence"
+	xmlns:mnggeofence="http://omd/omdservices/manageGeofence">
+
+	<xs:element name="userId" type="xs:string" />
+	<xs:element name="customerId" type="xs:string" />
+	<xs:element name="geofenceName" type="xs:string" />
+	<xs:element name="proximityEvent" type="xs:string" />
+	<xs:element name="upLeftLat" type="xs:string" />
+	<xs:element name="upLeftLong" type="xs:string" />
+	<xs:element name="lowerRightLat" type="xs:string" />
+	<xs:element name="lowerRightLong" type="xs:string" />
+	<xs:element name="geofenceNotes" type="xs:string" />
+	<xs:element name="customerList" type="xs:string" />
+	<xs:element name="geofenceSeqId" type="xs:string" />
+	<xs:element name="actionType" type="xs:string" />
+
+	<xs:complexType name="manageGeofenceRequestType">
+		<xs:sequence>
+			<xs:element ref="mnggeofence:userId" minOccurs="1" />
+			<xs:element ref="mnggeofence:customerId" minOccurs="1" />
+			<xs:element ref="mnggeofence:geofenceName" minOccurs="1" />
+			<xs:element ref="mnggeofence:proximityEvent" minOccurs="1" />
+			<xs:element ref="mnggeofence:upLeftLat" minOccurs="1" />
+			<xs:element ref="mnggeofence:upLeftLong" minOccurs="1" />
+			<xs:element ref="mnggeofence:lowerRightLat" minOccurs="1" />
+			<xs:element ref="mnggeofence:lowerRightLong" minOccurs="1" />
+			<xs:element ref="mnggeofence:geofenceNotes" minOccurs="0" />
+			<xs:element ref="mnggeofence:customerList" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element ref="mnggeofence:geofenceSeqId" minOccurs="0" />
+			<xs:element ref="mnggeofence:actionType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="manageGeofenceResponseType">
+		<xs:sequence>
+			<xs:element ref="mnggeofence:customerId" minOccurs="1" />
+			<xs:element ref="mnggeofence:geofenceName" minOccurs="1" />
+			<xs:element ref="mnggeofence:proximityEvent" minOccurs="1" />
+			<xs:element ref="mnggeofence:upLeftLat" minOccurs="1" />
+			<xs:element ref="mnggeofence:upLeftLong" minOccurs="1" />
+			<xs:element ref="mnggeofence:lowerRightLat" minOccurs="1" />
+			<xs:element ref="mnggeofence:lowerRightLong" minOccurs="1" />
+			<xs:element ref="mnggeofence:geofenceNotes" minOccurs="0" />
+			<xs:element ref="mnggeofence:geofenceSeqId" minOccurs="0" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Added for Config geOfence Screen -->
+
+	<xs:complexType name="addNotifyConfigRequestType">
+		<xs:sequence>
+			<xs:element name="userName" type="xs:string" minOccurs="0" />
+			<xs:element name="orgObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="modelObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="notfyFlagValue" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="thresholdName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="thresholdValue" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="notifyConfigResponseType">
+		<xs:sequence>
+			<xs:element name="cfgobjId" type="xs:string" minOccurs="0" />
+			<xs:element name="orgObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="modelObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="customer" type="xs:string" minOccurs="0" />
+			<xs:element name="model" type="xs:string" minOccurs="0" />
+			<xs:element name="cfgParamName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="cfgValue" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="notifyConfigRequestType">
+		<xs:sequence>
+			<xs:element name="cfgobjId" type="xs:string" minOccurs="0" />
+			<xs:element name="orgObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="modelObjId" type="xs:string" minOccurs="0" />
+			<xs:element name="customer" type="xs:string" minOccurs="0" />
+			<xs:element name="model" type="xs:string" minOccurs="0" />
+			<xs:element name="cfgParamName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="cfgValue" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="notifyFlagsResponseType">
+		<xs:sequence>
+			<xs:element name="notifyFlagsList" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="thresholdResponseType">
+		<xs:sequence>
+			<xs:element name="thresholdList" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- End of Changes for geofence Screen -->
+
+	<xs:element name="addNotifyConfigRequestType" type="addNotifyConfigRequestType" />
+	<xs:element name="notifyConfigResponseType" type="notifyConfigResponseType" />
+	<xs:element name="notifyConfigRequestType" type="notifyConfigRequestType" />
+	<xs:element name="notifyFlagsResponseType" type="notifyFlagsResponseType" />
+	<xs:element name="thresholdResponseType" type="thresholdResponseType" />
+
+</xs:schema>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/ppassets"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/ppassets"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:pp="http://omd/omdservices/ppassets">
+
+	<complexType name="ppAssetStatusResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGroupName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="customerName" type="xs:string" minOccurs="0" />
+			<element name="model" type="xs:string" minOccurs="0" />
+			<element name="latitude" type="xs:string" minOccurs="0" />
+			<element name="fuelLvl" type="xs:string" minOccurs="0" />
+			<element name="longitude" type="xs:string" minOccurs="0" />
+			<element name="engine" type="xs:string" minOccurs="0" />
+			<element name="velocity" type="xs:string" minOccurs="0" />
+			<element name="notMoving" type="xs:string" minOccurs="0" />
+			<element name="heading" type="xs:string" minOccurs="0" />
+			<element name="engineOn" type="xs:string" minOccurs="0" />
+			<element name="distance" type="xs:string" minOccurs="0" />
+			<element name="engineCtrl" type="xs:string" minOccurs="0" />
+			<element name="location" type="xs:string" minOccurs="0" />
+			<element name="locoOrientation" type="xs:string" minOccurs="0" />
+			<element name="state" type="xs:string" minOccurs="0" />
+			<element name="actvNotifications" type="xs:string" minOccurs="0" />
+			<element name="milePost" type="xs:string" minOccurs="0" />
+			<element name="region" type="xs:string" minOccurs="0" />
+			<element name="subRegion" type="xs:string" minOccurs="0" />
+			<element name="lstFuelReadingRcvd" type="xs:dateTime"
+				minOccurs="0" />
+			<element name="messageTime" type="xs:dateTime" minOccurs="0" />
+			<element name="notificationType" type="xs:string" minOccurs="0" />
+			<element name="fleetNumber" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<simpleType name="notificationTypeEnum">
+		<restriction base="xs:string">
+			<enumeration value="ALARM" />
+			<enumeration value="ALERT" />
+			<enumeration value="NORMAL" />
+		</restriction>
+	</simpleType>
+	<complexType name="ppAssetStatusHstryResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGroupName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="lastMsgDate" type="xs:dateTime" minOccurs="0" />
+			<element name="latitude" type="xs:string" minOccurs="0" />
+			<element name="longitude" type="xs:string" minOccurs="0" />
+			<element name="velocity" type="xs:string" minOccurs="0" />
+			<element name="heading" type="xs:string" minOccurs="0" />
+			<element name="direction" type="xs:string" minOccurs="0" />
+			<element name="distance" type="xs:string" minOccurs="0" />
+			<element name="state" type="xs:string" minOccurs="0" />
+			<element name="milePost" type="xs:string" minOccurs="0" />
+			<element name="region" type="xs:string" minOccurs="0" />
+			<element name="subRegion" type="xs:string" minOccurs="0" />
+			<element name="fuelLvl" type="xs:string" minOccurs="0" />
+			<element name="fuelAdded" type="xs:string" minOccurs="0" />
+			<element name="engine" type="xs:string" minOccurs="0" />
+			<element name="notMoving" type="xs:string" minOccurs="0" />
+			<element name="engineOn" type="xs:string" minOccurs="0" />
+			<element name="engineCtrl" type="xs:string" minOccurs="0" />
+			<element name="location" type="xs:string" minOccurs="0" />
+			<element name="locoOrientation" type="xs:string" minOccurs="0" />
+			<element name="assetStatusNotificationType" type="pp:notificationTypeEnum"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="stateInfoType">
+		<sequence>
+			<element name="stateName" type="xs:string" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ppStateResponseType">
+		<sequence>
+			<element name="countryName" type="xs:string" minOccurs="0" />
+			<element name="stateInfo" type="tns:stateInfoType" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ppAssetRequestType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGroupName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="language" type="xs:string" minOccurs="0" />
+			<element name="ppLookBackDays" type="xs:int" minOccurs="0" />
+			<element name="prodAssetMap" type="tns:prodAssetMapRequestType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="ppAssetResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGroupName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="prodAssetMapRequestType">
+		<sequence>
+			<element name="productName" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="stateInfoType" type="tns:stateInfoType" />
+	<element name="prodAssetMapRequestType" type="tns:prodAssetMapRequestType" />
+</schema>

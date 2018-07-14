@@ -1,0 +1,35 @@
+<ehcache>
+
+	<diskStore path="java.io.tmpdir/RMDWeb" />
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="120" />
+
+	<cache
+		name="com.ge.trans.rmd.services.hibernate.valueobjects.GetSysLookupMultilangHVO"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="600" overflowToDisk="true" />
+
+	<cache
+		name="com.ge.trans.rmd.services.hibernate.valueobjects.GetCmTimeZoneHVO"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="600" overflowToDisk="true" />
+
+	<cache
+		name="com.ge.trans.rmd.kep.hibernate.valueobjects.GetKmKepFaultCodesHVO"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3000"
+		timeToLiveSeconds="6000" overflowToDisk="true" />
+
+	<cache name="geofence_master_proximityCache" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="3600" />
+	<cache name="PPAssetHstHdrsCache" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="UnitConversionCache" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+</ehcache>
+
+
