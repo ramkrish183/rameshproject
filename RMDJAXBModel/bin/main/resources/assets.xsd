@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/assetservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/assetservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- xmlns:rule="http://omd/omdservices/ruleservice"> <import namespace="http://omd/omdservices/ruleservice" 
+		schemaLocation="rule.xsd" /> -->
+	<complexType name="headerInfoType">
+		<sequence>
+			<element name="headerName" type="xs:string" minOccurs="1" />
+			<element name="groupName" type="xs:string" minOccurs="1" />
+			<element name="headerTooltip" type="xs:string" minOccurs="1" />
+			<element name="boundaryValues" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="faultDetailsType">
+		<sequence>
+			<element name="parameterName" type="xs:string" minOccurs="0" />
+			<element name="parameterValue" type="xs:string" minOccurs="0" />
+			<element name="tooltip" type="xs:string" minOccurs="0" />
+			<element name="highLowIndicator" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="healthCheckRequestType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="language" type="xs:string" minOccurs="1" />
+			<element name="userLanguage" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="healthCheckAvailableResponse">
+		<sequence>
+			<element name="platform" type="xs:string" maxOccurs="unbounded" />
+			<element name="defaultValue" type="xs:string" minOccurs="1" />
+			<element name="strHCMessage" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="healthCheckSubmitRequest">
+		<sequence>
+			<element name="customerID" type="xs:string" minOccurs="1" />
+			<element name="roadIntial" type="xs:string" minOccurs="1" />
+			<element name="roadNumber" type="xs:long" minOccurs="1" />
+			<element name="assetType" type="xs:string" minOccurs="1" />
+			<element name="mpGroupId" type="xs:long" minOccurs="1" />
+			<element name="mpGroupName" type="xs:string" minOccurs="1" />
+			<element name="sampleRate" type="xs:long" minOccurs="1" />
+			<element name="postSamples" type="xs:long" minOccurs="1" />
+			<element name="platform" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="healthCheckViewResponse">
+		<sequence>
+			<element name="messageId" type="xs:long" minOccurs="1" />
+			<element name="messageDirection" type="xs:string" minOccurs="1" />
+			<element name="messageType" type="xs:string" minOccurs="1" />
+			<element name="requestor" type="xs:string" minOccurs="1" />
+			<element name="requestDate" type="xs:dateTime" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+			<element name="retryCount" type="xs:long" minOccurs="1" />
+			<element name="statusDate" type="xs:dateTime" minOccurs="1" />
+			<element name="templateVersion" type="xs:string" minOccurs="1" />
+			<element name="offboardSequence" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="hcViewHistoryRequestType">
+		<sequence>
+			<element name="customerId" type="xs:string" minOccurs="1" />
+			<element name="roadInitial" type="xs:string" minOccurs="1" />
+			<element name="roadNumber" type="xs:string" minOccurs="1" />
+			<element name="platform" type="xs:string" minOccurs="1" />
+			<element name="messageId" type="xs:string" minOccurs="1" />
+			<element name="toDate" type="xs:string" minOccurs="1" />
+			<element name="fromDate" type="xs:string" minOccurs="1" />
+
+		</sequence>
+	</complexType>
+
+	<complexType name="lifeStatisticsResponseType">
+		<sequence>
+			<element name="attributeName" type="xs:string" minOccurs="1" />
+			<element name="sortOrder" type="xs:string" minOccurs="1" />
+			<element name="statisticGatheringDate" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="attributeValue" type="xs:string" minOccurs="1" />
+			<element name="units" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="lifeStatisticsRequestType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="assetGroupName" type="xs:string" minOccurs="1" />
+			<element name="assetGroupNumber" type="xs:long" minOccurs="1" />
+			<element name="customerID" type="xs:string" minOccurs="1" />
+			<element name="controllerCfg" type="xs:string" minOccurs="1" />
+			<element name="fromDate" type="xs:dateTime" minOccurs="1" />
+			<element name="toDate" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- Added by Rajesh on 9 Feb,2012,Begin -->
+	<complexType name="assetLocatorResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="assetGrpName" type="xs:string" minOccurs="1" />
+			<element name="customerId" type="xs:string" minOccurs="1" />
+			<element name="longitude" type="xs:string" minOccurs="1" />
+			<element name="latitude" type="xs:string" minOccurs="1" />
+			<element name="maxOccurTime" type="xs:dateTime" minOccurs="1" />
+			<element name="modelName" type="xs:string" minOccurs="1" />
+			<element name="lstFaultdt" type="xs:dateTime" minOccurs="1" />
+			<element name="lstPrcddt" type="xs:dateTime" minOccurs="1" />
+			<element name="lstEOAFaultHeader" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lstPPATSMsgHeader" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lstESTPDownloadHeader" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lstFaultDateCell" type="xs:dateTime"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- Added by Rajesh end -->
+
+	<!-- Added by Sadasivam on 17 Feb,2015,Begin -->
+	<complexType name="assetInstalledProductResponseType">
+		<sequence>
+			<element name="partNumber" type="xs:string" minOccurs="1" />
+			<element name="description" type="xs:string" minOccurs="1" />
+			<element name="warrantyEndDate" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- Added by Sadasivam end -->
+
+
+	<!-- added by gaurav on 02/08/2011 starts -->
+
+
+	<complexType name="assetResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="assetGroupName" type="xs:string" minOccurs="1" />
+			<element name="assetGroupNumber" type="xs:long" minOccurs="1" />
+			<element name="customerID" type="xs:string" minOccurs="1" />
+			<element name="customerName" type="xs:string" minOccurs="1" />
+			<element name="location" type="xs:string" minOccurs="1" />
+			<element name="assetId" type="xs:long" minOccurs="1" />
+			<element name="dsControllerConfig" type="xs:string"
+				minOccurs="1" />
+			<element name="model" type="xs:string" minOccurs="1" />
+			<element name="controllerCfg" type="xs:string" minOccurs="1" />
+			<element name="fleet" type="xs:string" minOccurs="1" />
+			<element name="cmuId" type="xs:string" minOccurs="1" />
+			<element name="egaCommId" type="xs:string" minOccurs="1" />
+			<element name="partStatus" type="xs:string" minOccurs="1" />
+			<element name="installationDate" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="softwareVersion" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- added by gaurav on 02/08/2011 ends -->
+
+	<complexType name="assetNumberResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="customerID" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="assetHeaderResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="assetGroupName" type="xs:string" minOccurs="1" />
+			<element name="customerID" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="requestHistoryResponseType">
+		<sequence>
+			<element name="messageID" type="xs:string" minOccurs="1" />
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="requestType" type="xs:string" minOccurs="1" />
+			<element name="direction" type="xs:string" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+			<element name="statusDate" type="xs:dateTime" minOccurs="1" />
+			<element name="requestor" type="xs:string" minOccurs="1" />
+			<element name="attempt" type="xs:string" minOccurs="1" />
+			<element name="creationDate" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="vehicleCommStatusResponseType">
+		<sequence>
+			<element name="lastFaultResetTime" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lastFaultReceivedTime" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lastHealthChkRequestTime" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="lastKeepAliveMsgRevdTime" type="xs:dateTime"
+				minOccurs="0" />
+			<element name="lastProcessedDate" type="xs:dateTime"
+				minOccurs="0" />
+			<element name="controllerConfig" type="xs:string" minOccurs="0" />
+			<element name="softwareVersion" type="xs:string" minOccurs="1" />
+			<element name="statusColor" type="xs:string" minOccurs="1" />
+			<element name="reportStatus" type="xs:string" minOccurs="1" />
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="assetGrpName" type="xs:string" minOccurs="1" />
+			<element name="customerId" type="xs:string" minOccurs="1" />
+			<element name="keepAliveHistory" type="tns:keepAliveHistoryType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="keepAliveHistoryType">
+		<sequence>
+			<element name="keepAliveHistDate" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="model" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="faultResponseType">
+		<sequence>
+			<element name="headerInfo" type="tns:headerInfoType" />
+			<element name="faultDetails" type="tns:faultDetailsType" />
+		</sequence>
+	</complexType>
+	<!--added by Gaurav on 02/08/2011 starts -->
+	<complexType name="serviceResponseType">
+		<sequence>
+			<element name="serviceID" type="xs:long" minOccurs="1" />
+			<element name="serviceName" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!--added by Gaurav on 02/08/2011 ends -->
+	<complexType name="customer">
+		<sequence>
+			<element name="customerID" type="xs:string" minOccurs="1" />
+			<element name="customerName" type="xs:string" minOccurs="1" />
+			<element name="customerSeqId" type="xs:string" minOccurs="1" />
+			<element name="isDefault" type="xs:boolean" minOccurs="0" />
+			<element name="isAllCustomerdefault" type="xs:boolean"
+				minOccurs="0" />
+			<element name="isAllCustomer" type="xs:boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="fleet">
+		<sequence>
+			<element name="fleetID" type="xs:string" minOccurs="1" />
+			<element name="fleet" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="model">
+		<sequence>
+			<element name="modelID" type="xs:string" minOccurs="1" />
+			<element name="modelName" type="xs:string" minOccurs="1" />
+			<element name="modelDesc" type="xs:string" minOccurs="1" />
+			<element name="modelFamily" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- <complexType name="ruleConfig"> <sequence> <element name="ruleConfiguration" 
+		type="xs:string" minOccurs="1" /> <element name="value1" type="xs:string" 
+		minOccurs="1" /> <element name="ruleFunction" type="rule:ruleFunction" minOccurs="1" 
+		/> </sequence> </complexType> -->
+
+	<complexType name="FaultDetailsResponseType">
+		<sequence>
+			<element name="paramNumber" type="xs:string" minOccurs="1" />
+			<element name="paramData" type="xs:string" minOccurs="1" />
+			<element name="upperBound" type="xs:string" minOccurs="1" />
+			<element name="lowerBound" type="xs:string" minOccurs="1" />
+			<element name="notch" type="xs:string" minOccurs="1" />
+			<element name="width" type="xs:string" minOccurs="1" />
+			<element name="proximityDesc" type="xs:string" minOccurs="1" />
+			<element name="color" type="xs:string" minOccurs="1" />
+			<element name="dataToolTip" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="faultLogServiceResponseType">
+		<sequence>
+			<element name="lstFaultdataDetails" type="tns:FaultDetailsResponseType"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="notch" type="xs:string" minOccurs="1" />
+			<element name="faultStratergyId" type="xs:string" minOccurs="1" />
+			<element name="fixedHeaderWidthTotal" type="xs:string"
+				minOccurs="1" />
+			<element name="recordType" type="xs:string" minOccurs="1" />
+			<element name="faultOrigin" type="xs:string" minOccurs="1" />
+			<element name="faultObjId" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="faultDataDetailsResponseType">
+		<sequence>
+			<element name="header" type="tns:ToolParamInfoResponseType"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="grpheader" type="tns:ToolsParamGroupResponseType"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="faultDataResponse" type="tns:faultDataResponseType" />
+			<element name="fixedheaderwidth" type="xs:string" minOccurs="1" />
+			<element name="headerWidth" type="xs:string" minOccurs="1" />
+			<element name="fixedHeaderWidthTotal" type="xs:string"
+				minOccurs="1" />
+			<element name="totalRecordsavailable" type="xs:int"
+				minOccurs="1" />
+			<element name="variableHeaderWidthTotal" type="xs:string"
+				minOccurs="1" />
+			<element name="startPos" type="xs:int" minOccurs="1" />
+			<element name="noOfRecs" type="xs:int" minOccurs="1" />
+			<element name="totalCount" type="xs:int" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="faultDataResponseType">
+		<sequence>
+			<element name="faultdata" type="tns:faultLogServiceResponseType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ToolParamInfoResponseType">
+		<sequence>
+			<element name="headerHtml" type="xs:string" minOccurs="1" />
+			<element name="dummyHeaderHtml" type="xs:string" minOccurs="1" />
+			<element name="columnName" type="xs:string" minOccurs="1" />
+			<element name="info" type="xs:string" minOccurs="1" />
+			<element name="format" type="xs:string" minOccurs="1" />
+			<element name="upperBound" type="xs:string" minOccurs="1" />
+			<element name="lowerBound" type="xs:string" minOccurs="1" />
+			<element name="headerWidth" type="xs:string" minOccurs="1" />
+			<element name="fixedHeaderWidthTotal" type="xs:string"
+				minOccurs="1" />
+			<element name="variableHeaderWidthTotal" type="xs:string"
+				minOccurs="1" />
+			<element name="dataTooltipFlag" type="xs:string" minOccurs="1" />
+			<element name="style" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ToolsParamGroupResponseType">
+		<sequence>
+			<element name="paramGroup" type="xs:string" minOccurs="1" />
+			<element name="groupHeaderWidth" type="xs:string" minOccurs="1" />
+			<element name="colspan" type="xs:string" minOccurs="1" />
+			<element name="variableHeaderWidth" type="xs:string"
+				minOccurs="1" />
+			<element name="style" type="xs:string" minOccurs="1" />
+			<element name="toolTip" type="xs:string" minOccurs="1" />
+			<element name="dummyParamGroup" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="parameterResponseType">
+		<sequence>
+			<element name="parameterNameID" type="xs:string" minOccurs="1" />
+			<element name="parameterName" type="xs:string" minOccurs="1" />
+			<element name="columnType" type="xs:string" minOccurs="1" />
+			<element name="value" type="xs:string" minOccurs="1" />
+			<element name="paramDBName" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="LastDownLoadStatusResponseType">
+		<sequence>
+			<element name="custHeader" type="xs:string" minOccurs="0" />
+			<element name="customerHeader" type="xs:string" minOccurs="0" />
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetNoHeader" type="xs:string" minOccurs="0" />
+			<element name="lstDownloadTm" type="xs:dateTime" minOccurs="0" />
+			<element name="lstDownloadHeader" type="xs:string" minOccurs="0" />
+			<element name="state" type="xs:string" minOccurs="0" />
+			<element name="stateHeader" type="xs:string" minOccurs="0" />
+			<element name="vax" type="xs:string" minOccurs="0" />
+			<element name="vaxHeader" type="xs:string" minOccurs="0" />
+			<element name="vaxDt" type="xs:dateTime" minOccurs="0" />
+			<element name="egu" type="xs:string" minOccurs="0" />
+			<element name="eguHeader" type="xs:string" minOccurs="0" />
+			<element name="eguDt" type="xs:dateTime" minOccurs="0" />
+			<element name="inc" type="xs:string" minOccurs="0" />
+			<element name="incHeader" type="xs:string" minOccurs="0" />
+			<element name="incDt" type="xs:dateTime" minOccurs="0" />
+			<element name="snp" type="xs:string" minOccurs="0" />
+			<element name="snpHeader" type="xs:string" minOccurs="0" />
+			<element name="snpDt" type="xs:dateTime" minOccurs="0" />
+
+		</sequence>
+	</complexType>
+
+	<complexType name="LastFaultStatusResponseType">
+		<sequence>
+			<element name="custHeader" type="xs:string" minOccurs="0" />
+			<element name="customerHeader" type="xs:string" minOccurs="0" />
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetNoHeader" type="xs:string" minOccurs="0" />
+			<element name="lstEOAFault" type="xs:dateTime" minOccurs="0" />
+			<element name="lstEOAFaultHeader" type="xs:string" minOccurs="0" />
+			<element name="lstESTPDownload" type="xs:dateTime" minOccurs="0" />
+			<element name="lstESTPDownloadHeader" type="xs:string"
+				minOccurs="0" />
+			<element name="lstPPATSMsg" type="xs:dateTime" minOccurs="0" />
+			<element name="lstPPATSMsgHeader" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- Added for asset overvice services story -Start -->
+	<complexType name="assetServicesResponseType">
+		<sequence>
+			<element name="assetService" type="xs:string" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<!-- Added for asset overvice services story -End -->
+
+	<!-- Added for Product Asset Config story -->
+	<complexType name="customerAssetResponseType">
+		<sequence>
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="assetNumber" type="xs:string" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<!-- Added for Product Asset Config story -->
+	<!-- Added for AssetLocation Request Type -->
+	<complexType name="assetLocRequestType">
+		<sequence>
+			<element name="language" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGrpName" type="xs:string" minOccurs="0" />
+			<element name="prodAssetMap" type="tns:prodAssetMapRequestType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<!-- Added for AssetLocation Request Type -->
+
+	<!-- Added for Assets Request Type -->
+	<complexType name="assetsRequestType">
+		<sequence>
+			<element name="language" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="customer" type="xs:string" minOccurs="0" />
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetNumberLike" type="xs:string" minOccurs="0" />
+			<element name="assetGrpName" type="xs:string" minOccurs="0" />
+			<element name="model" type="xs:string" minOccurs="0" />
+			<element name="config" type="xs:string" minOccurs="0" />
+			<element name="fleet" type="xs:string" minOccurs="0" />
+			<element name="prodAssetMap" type="tns:prodAssetMapRequestType"
+				maxOccurs="unbounded" />
+			<element name="assetFrom" type="xs:long" minOccurs="0" />
+			<element name="assetTo" type="xs:long" minOccurs="0" />
+			<element name="modelId" type="xs:string" minOccurs="0" />
+			<element name="fleetId" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="prodAssetMapRequestType">
+		<sequence>
+			<element name="productName" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<!-- Added for Unit Shippers -->
+	<complexType name="unitShipperRequestType">
+		<sequence>
+			<element name="objId" type="xs:string" minOccurs="0" />
+			<element name="rnh" type="xs:string" minOccurs="0" />
+			<element name="roadNumber" type="xs:string" minOccurs="0" />
+			<element name="shipDate" type="xs:dateTime" minOccurs="0" />
+			<element name="testTrackDate" type="xs:dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="unitShipperResponseType">
+		<sequence>
+			<element name="objId" type="xs:string" minOccurs="0" />
+			<element name="rnh" type="xs:string" minOccurs="0" />
+			<element name="roadNumber" type="xs:string" minOccurs="0" />
+			<element name="shipDate" type="xs:string" minOccurs="0" />
+			<element name="testTrackDate" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+		
+
+	<complexType name="assetLocationRequest">
+		<sequence>
+			<element name="eServicesOrgId" type="xs:string" minOccurs="1" />
+			<element name="assets" type="tns:asset" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="asset">
+		<sequence>
+			<element name="roadNumberHeader" type="xs:string" minOccurs="1" />
+			<element name="roadNumber" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="assetLocationResponse">
+		<sequence>
+			<element name="assetLocationDetails" type="tns:assetLocationDetail" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="assetLocationDetail">
+		<sequence>
+			<element name="roadNumberHeader" type="xs:string" minOccurs="1" />
+			<element name="roadNumber" type="xs:string" minOccurs="1" />
+			<element name="latitude" type="xs:string" minOccurs="1" />
+			<element name="longitude" type="xs:string" minOccurs="1" />
+			<element name="latlongTime" type="xs:string" minOccurs="1" />
+			<element name="gpsSystem" type="xs:string" minOccurs="1" />
+			<element name="distanceToShop" type="xs:string" minOccurs="1" />
+			<element name="directionFromShop" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+
+	<!-- Added for Assets Request Type -->
+
+	<element name="faultDataResponse" type="tns:faultDataResponseType" />
+	<element name="LastDownLoadStatusResponse" type="tns:LastDownLoadStatusResponseType" />
+	<element name="ToolParamInfoResponseType" type="tns:ToolParamInfoResponseType" />
+	<element name="ToolsParamGroupResponseType" type="tns:ToolsParamGroupResponseType" />
+	<element name="faultDataResponseType" type="tns:faultDataResponseType" />
+
+	<element name="faultLogServiceResponseType" type="tns:faultLogServiceResponseType" />
+	<element name="FaultDetailsResponseType" type="tns:FaultDetailsResponseType" />
+
+
+	<element name="healthCheckRequest" type="tns:healthCheckRequestType" />
+	<element name="assetResponse" type="tns:assetResponseType" />
+	<element name="requestHistoryResponse" type="tns:requestHistoryResponseType" />
+	<element name="vehicleCommStatusResponse" type="tns:vehicleCommStatusResponseType" />
+	<element name="faultResponse" type="tns:faultResponseType" />
+	<!--added by Gaurav on 02/08/2011 -->
+	<element name="serviceResponse" type="tns:serviceResponseType" />
+	<element name="model" type="tns:model" />
+	<element name="LastFaultStatusResponseType" type="tns:LastFaultStatusResponseType" />
+	<element name="UnitShipperResponseType" type="tns:unitShipperResponseType" />
+	<element name="UnitShipperRequestType" type="tns:unitShipperRequestType" />
+
+</schema>

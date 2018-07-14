@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd  
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd  
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd  
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	<bean id="caseAPIMessages"
+		class="com.ge.trans.rmd.caseapi.services.service.impl.CaseAPIResourceMessagesImpl">
+		<property name="messageSource">
+			<ref bean="caseMessageSource" />
+		</property>
+	</bean>
+
+	<bean id="caseMessageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename">
+			<value>
+				classpath:com/ge/trans/eoa/services/common/resources/CaseAPIMessages
+			</value>
+		</property>
+	</bean>
+	<!-- CASE API - CONFIG ENTRIES STARTS -->
+
+
+	<bean id="caseManagementDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/EOAWeb</value>
+		</property>
+	</bean>
+
+	<import resource="classpath:com/ge/trans/eoa/cm/cm-dao-beans.xml" />
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="txManager"></property>
+	</bean>
+
+	<bean id="caseServiceAPI" class="com.ge.trans.eoa.cm.framework.service.CaseServiceAPI">
+		<constructor-arg value="${OLD_EOA_DATA_URL}"></constructor-arg>
+		<constructor-arg value="${EOA_DATA_URL}"></constructor-arg>
+	</bean>
+	<bean id="caseContent" class="com.ge.trans.eoa.cm.framework.domain.CaseContent" />
+
+	<aop:config>
+		<aop:pointcut id="caseTxOperations"
+			expression="execution(* com.ge.trans.rmd.caseapi.services.bo.impl.CaseBOImpl.*(..))" />
+		<aop:advisor advice-ref="requiredTxAdvice" pointcut-ref="caseTxOperations" />
+	</aop:config>
+	<!-- CASE API - CONFIG ENTRIES ENDS -->
+</beans>

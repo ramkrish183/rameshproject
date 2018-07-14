@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/assetservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/assetservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- xmlns:rule="http://omd/omdservices/ruleservice"> <import namespace="http://omd/omdservices/ruleservice" 
+		schemaLocation="rule.xsd" /> -->
+
+
+	<complexType name="RestrictedAlertShopRespType">
+		<sequence>
+			<element name="proximityCheckFlag" type="xs:string"
+				minOccurs="0" />
+			<element name="alertId" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="alertName" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ShopsResponseType">
+		<sequence>
+			<element name="shopId" type="xs:string" minOccurs="0" />
+			<element name="shopName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SubDivisionResponseType">
+		<sequence>
+			<element name="subDivisionId" type="xs:string" minOccurs="0" />
+			<element name="subDivisionName" type="xs:string" minOccurs="0" />
+			<element name="regionId" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+</schema>

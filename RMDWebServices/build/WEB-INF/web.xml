@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>jerseyspring</servlet-name>
+		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.ge.trans.rmd</param-value>
+		</init-param>
+		<!-- Added for response compression -->
+		<init-param>
+			<param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
+			<param-value>com.sun.jersey.api.container.filter.GZIPContentEncodingFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
+			<param-value>com.sun.jersey.api.container.filter.GZIPContentEncodingFilter</param-value>
+		</init-param>
+		<!-- Added this entry for Json - issue in array -->
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<!-- Added this entry for Json - issue in array -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jerseyspring</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>KEP_DATASOURCE_JNDI_NAME</param-name>
+		<param-value>java:jdbc/EOAWeb</param-value>
+	</context-param>
+	<context-param>
+		<param-name>EOADW_DATASOURCE_JNDI_NAME</param-name>
+		<param-value>java:jdbc/EOADW</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			com.ge.trans.rmd.services.kep.util.KEPApplicationScopeListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- APPLICATION SPECIFIC RESOURCE REFERENCE - START -->
+	<!-- <resource-ref> <description></description> <res-ref-name>jdbc/KEPWeb</res-ref-name> 
+		<res-type>javax.sql.DataSource</res-type> <res-auth>Container</res-auth> 
+		</resource-ref> -->
+	<!-- APPLICATION SPECIFIC RESOURCE REFERENCE - START -->
+
+	<!-- Added Filter -->
+	<filter>
+
+		<filter-name>CORS</filter-name>
+
+		<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+
+		<init-param>
+
+			<param-name>cors.allowGenericHttpRequests</param-name>
+
+			<param-value>true</param-value>
+
+		</init-param>
+
+
+
+		<init-param>
+
+			<param-name>cors.allowOrigin</param-name>
+
+			<param-value>*</param-value>
+
+		</init-param>
+
+
+
+		<init-param>
+
+			<param-name>cors.supportedMethods</param-name>
+
+			<param-value>GET, HEAD, POST, OPTIONS</param-value>
+
+		</init-param>
+
+		<init-param>
+
+			<param-name>cors.supportedHeaders</param-name>
+
+			<param-value>Content-Type, X-Requested-With,Origin, Accept</param-value>
+
+		</init-param>
+
+
+
+		<init-param>
+
+			<param-name>cors.exposedHeaders</param-name>
+
+			<param-value>X-Test-1, X-Test-2</param-value>
+
+		</init-param>
+
+	</filter>
+
+	<filter-mapping>
+
+		<filter-name>CORS</filter-name>
+
+		<url-pattern>/*</url-pattern>
+
+	</filter-mapping>
+
+	<!-- Added Filter Ended -->
+
+
+</web-app>

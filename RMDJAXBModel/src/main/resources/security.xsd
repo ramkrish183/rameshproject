@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/securityservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/securityservice"
+	xmlns:admin="http://omd/omdservices/adminservice" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<import namespace="http://omd/omdservices/adminservice"
+		schemaLocation="admin.xsd" />
+	<complexType name="loginResponse">
+		<sequence>
+			<element name="userSeqID" type="xs:long" minOccurs="0" />
+			<element name="passwordChangeDate" type="xs:dateTime"
+				minOccurs="0" />
+			<element name="version" type="xs:int" minOccurs="0" />
+			<element name="lastLoginDate" type="xs:dateTime" minOccurs="0" />
+			<element name="userdetail" type="admin:userDetailType" />
+			<element name="personalDetailType" type="admin:personalDetailType" />
+			<element name="rolesType" type="admin:RolesType" maxOccurs="unbounded" />
+			<element name="preferencesType" type="admin:preferencesType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+</schema> 

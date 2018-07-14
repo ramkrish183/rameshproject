@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/kpiservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/kpiservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<complexType name="kpiAssetCountsResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="assetGroupName" type="xs:string" minOccurs="0" />
+			<element name="customerId" type="xs:string" minOccurs="0" />
+			<element name="kpiName" type="xs:string" minOccurs="0" />
+			<element name="totalCount" type="xs:long" minOccurs="0" />
+			<element name="parameter" type="tns:parameterInfoType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="parameterInfoType">
+		<sequence>
+			<element name="parameterName" type="xs:string" minOccurs="1" />
+			<element name="parameterCount" type="xs:long" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- KPI Services -->
+	<complexType name="kpiInfoType">
+		<sequence>
+			<element name="parameterName" type="xs:string" minOccurs="1" />
+			<element name="parameterCount" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="kpiTotalCountResponseType">
+		<sequence>
+			<element name="customerId" type="xs:string" minOccurs="1" />
+			<element name="kpiName" type="xs:string" minOccurs="1" />
+			<element name="totalCount" type="xs:string" minOccurs="1" />
+			<element name="lastFourWeekAvg" type="xs:string" minOccurs="1" />
+			<element name="lastQuarterAvg" type="xs:string" minOccurs="1" />
+			<element name="currentYearAvg" type="xs:string" minOccurs="1" />
+			<element name="lastUpdatedDate" type="xs:string" minOccurs="1" />
+			<element name="parameter" type="tns:kpiInfoType" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="kpiTotalCountRequestType">
+		<sequence>
+			<element name="customerId" type="xs:string" minOccurs="1" />
+			<element name="kpiRequestType" type="tns:kpiRequestType"
+				maxOccurs="unbounded" />
+			<element name="language" type="xs:string" minOccurs="1" />
+			<element name="prodAssetMap" type="tns:prodAssetMapRequestType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="kpiRequestType">
+		<sequence>
+			<element name="kpiName" type="xs:string" minOccurs="1" />
+			<element name="noDays" type="xs:long" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="prodAssetMapRequestType">
+		<sequence>
+			<element name="productName" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="kpiInfoType" type="tns:kpiInfoType" />
+	<element name="kpiTotalCountResponse" type="tns:kpiTotalCountResponseType" />
+	<!-- KPI services -->
+</schema>

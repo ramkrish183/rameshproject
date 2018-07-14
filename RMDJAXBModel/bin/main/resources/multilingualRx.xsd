@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/toolservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/toolservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<complexType name="TranslationLanguageStatus">
+		<sequence>
+			<element name="language" type="xs:string" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="MultilingualRxResponseType">
+		<sequence>
+			<element name="title" type="xs:string" minOccurs="1" />
+			<element name="rxStatus" type="xs:string" minOccurs="1" />
+			<element name="type" type="xs:string" minOccurs="1" />
+			<element name="translatedLanguages" type="tns:TranslationLanguageStatus" maxOccurs="unbounded" />
+			<element name="models" type="xs:string" maxOccurs="unbounded" />
+			<element name="lastModifiedBy" type="xs:string" minOccurs="1" />
+			<element name="lastModifiedOn" type="xs:dateTime" minOccurs="1" />
+			<element name="approvedBy" type="xs:string" minOccurs="1" />
+			<element name="approvedOn" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="MultilingualRxFilterRequestType">
+		<sequence>
+			<element name="title" type="xs:string" minOccurs="1" />
+			<element name="model" type="xs:string" minOccurs="1" />
+			<element name="type" type="xs:string" minOccurs="1" />
+			<element name="language" type="xs:string" maxOccurs="unbounded" />
+			<element name="translationStatus" type="xs:string" minOccurs="1" />
+			<element name="lastModifiedBy" type="xs:string" minOccurs="1" />
+			<element name="lastModifiedOn" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+</schema>

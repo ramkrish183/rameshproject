@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/ruleservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/ruleservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<!-- added by gaurav on 02/08/2011 starts -->
+	<complexType name="ruleTesterRequestType">
+		<sequence>
+			<element name="ruleID" type="xs:string" minOccurs="0" />
+			<element name="noofdays" type="xs:string" minOccurs="1" />
+			<element name="assetID" type="xs:string" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ruleTestSearchResultResponseType">
+		<sequence>
+			<element name="trackingID" type="xs:string" minOccurs="1" />
+			<element name="ruleID" type="xs:string" minOccurs="1" />
+			<element name="ruleType" type="xs:string" minOccurs="1" />
+			<element name="ruleTitle" type="xs:string" minOccurs="1" />
+			<element name="createdBy" type="xs:string" minOccurs="1" />
+			<element name="createdDate" type="xs:dateTime" minOccurs="1" />
+			<element name="finishDate" type="xs:dateTime" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<!-- added by gaurav on 02/08/2011 ends -->
+	<element name="ruleTesterRequest" type="tns:ruleTesterRequestType" />
+	<element name="ruleTestSearchResultResponse" type="tns:ruleTestSearchResultResponseType" />
+
+</schema>

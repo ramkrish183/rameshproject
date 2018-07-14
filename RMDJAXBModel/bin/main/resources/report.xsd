@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/report"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/report"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<complexType name="rcaReportResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="caseID" type="xs:string" minOccurs="1" />
+			<element name="solutionCaseID" type="xs:string" minOccurs="1" />
+			<element name="solutionTitle" type="xs:string" minOccurs="1" />
+			<element name="solutionDeliverDate" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="solutionClosureDate" type="xs:dateTime"
+				minOccurs="1" />
+			<element name="feedbackRepairInfo" type="xs:string"
+				minOccurs="1" />
+			<element name="executedBy" type="xs:string" minOccurs="1" />
+			<element name="solutionFeedback" type="xs:string" minOccurs="1" />
+			<element name="solutionScoring" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="solutionReportResponseType">
+		<sequence>
+			<element name="solutionID" type="xs:string" minOccurs="0" />
+			<element name="solutionTitle" type="xs:string" minOccurs="0" />
+			<element name="toolSuggestion" type="xs:string" minOccurs="0" />
+			<element name="toolSuggestionDel" type="xs:string" minOccurs="0" />
+			<element name="toolSuggestionAccuracy" type="xs:string"
+				minOccurs="0" />
+			<element name="deliveryAccuration" type="xs:string"
+				minOccurs="0" />
+			<element name="toolAccuracyPct" type="xs:string" minOccurs="0" />
+			<element name="toolCoveragePct" type="xs:string" minOccurs="0" />
+			<element name="mdscDelv" type="xs:string" minOccurs="0" />
+			<element name="mdscDelvAccuracy" type="xs:string" minOccurs="0" />
+			<element name="mdscFalseAlarm" type="xs:string" minOccurs="0" />
+			<element name="mdscAccuracyPct" type="xs:string" minOccurs="0" />
+			<element name="missCount" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="ruleMeasureReportResponseType">
+		<sequence>
+			<element name="ruleID" type="xs:long" minOccurs="0" />
+			<element name="ruleDef" type="xs:string" minOccurs="0" />
+			<element name="ruleTitle" type="xs:string" minOccurs="0" />
+			<element name="family" type="xs:string" minOccurs="0" />
+			<element name="active" type="xs:string" minOccurs="0" />
+			<element name="accurate" type="xs:string" minOccurs="0" />
+			<element name="solutionAttach" type="xs:string" minOccurs="0" />
+			<element name="activationDate" type="xs:dateTime" minOccurs="0" />
+			<element name="firedCount" type="xs:string" minOccurs="0" />
+			<element name="accurateCount" type="xs:string" minOccurs="0" />
+			<element name="missCount" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="errorReportResponseType">
+		<sequence>
+			<element name="assetNumber" type="xs:string" minOccurs="0" />
+			<element name="category" type="xs:string" minOccurs="0" />
+			<element name="program" type="xs:string" minOccurs="0" />
+			<element name="errorDetails" type="xs:string" minOccurs="0" />
+			<element name="outboundMsg" type="xs:string" minOccurs="0" />
+			<element name="inboundMsg" type="xs:string" minOccurs="0" />
+			<element name="msgHeader" type="xs:string" minOccurs="0" />
+			<element name="msgSize" type="xs:string" minOccurs="0" />
+			<element name="errorType" type="xs:string" minOccurs="0" />
+			<element name="errorCode" type="xs:string" minOccurs="0" />
+			<element name="originalQueue" type="xs:string" minOccurs="0" />
+			<element name="stackTrace" type="xs:string" minOccurs="0" />
+			<element name="viewDays" type="xs:string" minOccurs="0" />
+			<element name="errorTime" type="xs:dateTime" minOccurs="0" />
+			<element name="emailNotifyTime" type="xs:dateTime" minOccurs="0" />
+			<element name="discardTime" type="xs:dateTime" minOccurs="0" />
+			<element name="restoredTime" type="xs:dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="rcaReportResponse" type="tns:rcaReportResponseType" />
+	<element name="solutionReportResponse" type="tns:solutionReportResponseType" />
+	<element name="ruleMeasureReportResponse" type="tns:ruleMeasureReportResponseType" />
+</schema>

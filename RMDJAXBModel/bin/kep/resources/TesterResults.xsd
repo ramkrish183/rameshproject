@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/ruleservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/ruleservice"
+	elementFormDefault="unqualified" attributeFormDefault="unqualified">
+
+
+
+	<complexType name="ruleTestSearchResultResponseType">
+		<sequence>
+			<element name="trackingId" type="xs:string" minOccurs="1" />
+			<element name="ruleId" type="xs:string" minOccurs="1" />
+			<element name="ruleType" type="xs:string" minOccurs="1" />
+			<element name="ruleTitle" type="xs:string" minOccurs="1" />
+			<element name="createdBy" type="xs:string" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+			<element name="fromDt" type="xs:dateTime" minOccurs="1" />
+			<element name="toDate" type="xs:dateTime" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="ruleTesterCriteriaResponseType">
+		<sequence>
+			<element name="customer" type="xs:string" minOccurs="1" />
+			<element name="failureType" type="xs:string" minOccurs="1" />
+			<element name="assetNumber" type="xs:string" minOccurs="1" />
+			<element name="fleet" type="xs:string" minOccurs="1" />
+			<element name="Model" type="xs:string" minOccurs="1" />
+			<element name="config" type="xs:string" minOccurs="1" />
+			<element name="dateRange" type="xs:string" minOccurs="1" />
+			<element name="options" type="xs:string" minOccurs="1" />
+			<element name="ruleId" type="xs:string" minOccurs="1" />
+			<element name="segmentWindow" type="xs:string" minOccurs="1" />
+			<element name="classificationWindow" type="xs:string"
+				minOccurs="1" />
+			<element name="classifyStepSize" type="xs:string" minOccurs="1" />
+			<element name="progExclude" type="xs:string" minOccurs="1" />
+			<element name="coverage" type="xs:string" minOccurs="1" />
+			<element name="coveragePercent" type="xs:string" minOccurs="1" />
+			<element name="falseAlarms" type="xs:string" minOccurs="1" />
+			<element name="falseAlarmPercent" type="xs:string" minOccurs="1" />
+			<element name="classification" type="xs:string" minOccurs="1" />
+			<element name="testerResult" type="tns:testerResultResponseType"
+				maxOccurs="unbounded" />
+			<element name="DataFilterDetails" type="tns:dataFilterDetailsResponseType"
+				maxOccurs="unbounded" />
+			<element name="testerSummary" type="tns:testerSummaryResponseType"
+				maxOccurs="unbounded" />
+			<element name="hasClassification" type="xs:boolean"
+				minOccurs="1" />
+			<element name="rootCause" type="xs:string" minOccurs="1" />
+			<element name="symptom" type="xs:string" minOccurs="1" />
+			<element name="ruleTesterStartDate" type="xs:string"
+				minOccurs="1" />
+			<element name="ruleTesterEndDate" type="xs:string" minOccurs="1" />
+			<element name="roadNumber" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="testerResultResponseType">
+		<sequence>
+			<element name="customer" type="xs:string" minOccurs="1" />
+			<element name="assetNo" type="xs:string" minOccurs="1" />
+			<element name="noOfFired" type="xs:int" minOccurs="1" />
+			<element name="segmentId" type="xs:string" minOccurs="1" />
+			<element name="classification" type="xs:string" minOccurs="1" />
+			<element name="hitOrMiss" type="xs:string" minOccurs="1" />
+
+		</sequence>
+	</complexType>
+
+	<complexType name="dataFilterDetailsResponseType">
+		<sequence>
+			<element name="dataName" type="xs:string" minOccurs="1" />
+			<element name="value1" type="xs:string" minOccurs="1" />
+			<element name="value2" type="xs:string" minOccurs="1" />
+			<element name="func" type="xs:string" minOccurs="1" />
+
+		</sequence>
+	</complexType>
+
+	<complexType name="testerSummaryResponseType">
+		<sequence>
+			<element name="totAssetsAnalysed" type="xs:int" minOccurs="1" />
+			<element name="classifications" type="xs:string" minOccurs="1" />
+			<element name="noOfAssts" type="xs:int" minOccurs="1" />
+			<element name="normalDataSets" type="xs:string" minOccurs="1" />
+
+		</sequence>
+	</complexType>
+
+
+
+
+	<element name="ruleTestSearchResultResponse" type="tns:ruleTestSearchResultResponseType" />
+	<element name="ruleTesterCriteriaResponse" type="tns:ruleTesterCriteriaResponseType" />
+
+</schema>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://omd/omdservices/knowledgeSeekerService"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://omd/omdservices/knowledgeSeekerService"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+
+	<complexType name="analysisDataResponseType">
+		<sequence>
+			<element name="patternSeqID" type="xs:int" minOccurs="1" />
+			<element name="pattern" type="xs:string" minOccurs="1" />
+			<element name="accuracy" type="xs:string" minOccurs="1" />
+			<element name="coverages" type="xs:string" minOccurs="1" />
+			<element name="falseAlarm" type="xs:string" minOccurs="1" />
+			<element name="score" type="xs:string" minOccurs="1" />
+			<element name="falseAlarmPercent" type="xs:string" minOccurs="1" />
+			<element name="coveragesPercent" type="xs:string" minOccurs="1" />
+			<element name="faultCodes" type="xs:string" minOccurs="1" />
+			<element name="baseDataResponseType" type="tns:baseDataResponseType"
+				minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="baseDataResponseType">
+		<sequence>
+			<element name="createdBy" type="xs:string" minOccurs="1" />
+			<element name="status" type="xs:string" minOccurs="1" />
+			<element name="customer" type="xs:string" minOccurs="1" />
+			<element name="assetID" type="xs:string" minOccurs="1" />
+			<element name="segmentID" type="xs:string" minOccurs="1" />
+			<element name="startDate" type="xs:dateTime" minOccurs="1" />
+			<element name="endDate" type="xs:dateTime" minOccurs="1" />
+			<element name="createDate" type="xs:dateTime" minOccurs="1" />
+			<element name="trackID" type="xs:string" minOccurs="1" />
+			<element name="customerID" type="xs:int" minOccurs="1" />
+			<element name="fleetID" type="xs:int" minOccurs="1" />
+			<element name="fleetName" type="xs:string" minOccurs="1" />
+			<element name="modelName" type="xs:string" minOccurs="1" />
+			<element name="modelID" type="xs:int" minOccurs="1" />
+			<element name="configID" type="xs:int" minOccurs="1" />
+			<element name="ConfigName" type="xs:string" minOccurs="1" />
+			<element name="assetName" type="xs:string" minOccurs="1" />
+			<element name="patternHitorMiss" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="summaryDataResponseType">
+		<sequence>
+			<element name="baseDataResponseType" type="tns:baseDataResponseType"
+				minOccurs="1" />
+			<element name="segmentWindow" type="xs:int" minOccurs="1" />
+			<element name="classificationWindow" type="xs:int" minOccurs="1" />
+			<element name="classificationStepSize" type="xs:int"
+				minOccurs="1" />
+			<element name="progExclude" type="xs:int" minOccurs="1" />
+			<element name="normalCondition" type="xs:string" minOccurs="1" />
+			<element name="supportLevel" type="xs:string" minOccurs="1" />
+			<element name="analysisFailureCases" type="xs:int" minOccurs="1" />
+			<element name="analysisNormalCases" type="xs:int" minOccurs="1" />
+			<!-- <element name="dataNormalCases" type="xs:int" minOccurs="1"/> <element 
+				name="dataFailureCases" type="xs:int" minOccurs="1"/> -->
+			<element name="dateRange" type="xs:string" minOccurs="1" />
+			<element name="filterFlag" type="xs:string" minOccurs="1" />
+			<element name="failureType" type="xs:string" minOccurs="1" />
+			<element name="dataFilter" type="xs:string" minOccurs="1" />
+			<element name="daysAfterEvent" type="xs:int" minOccurs="1" />
+			<element name="algorithmSelection" type="xs:string"
+				minOccurs="1" />
+			<element name="coverageAnalysis" type="xs:int" minOccurs="1" />
+			<element name="classification" type="xs:string" minOccurs="1" />
+			<element name="rootCause" type="xs:string" minOccurs="1" />
+			<element name="symptoms" type="xs:string" minOccurs="1" />
+			<element name="feAssets" type="xs:int" minOccurs="1" />
+			<element name="seAssets" type="xs:int" minOccurs="1" />
+			<element name="normalSegments" type="xs:int" minOccurs="1" />
+			<element name="failureSegments" type="xs:int" minOccurs="1" />
+			<element name="totAssetsAnalysed" type="xs:int" minOccurs="1" />
+			<element name="ruleMiningStartDate" type="xs:string"
+				minOccurs="1" />
+			<element name="ruleMiningEndDate" type="xs:string" minOccurs="1" />
+			<element name="faultCode" type="xs:string" minOccurs="0" />
+			<element name="runAgainst" type="xs:string" minOccurs="0" />
+
+		</sequence>
+	</complexType>
+	<complexType name="trackingDataResponseType">
+		<sequence>
+			<element name="baseDataResponseType" type="tns:baseDataResponseType"
+				minOccurs="1" />
+			<element name="runName" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="patternFilterResponseType">
+		<sequence>
+			<element name="key" type="xs:string" minOccurs="1" />
+			<element name="value" type="xs:string" minOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="trackingSummaryResponseType">
+		<sequence>
+			<element name="summaryDataResponseType" type="tns:summaryDataResponseType"
+				maxOccurs="unbounded" />
+			<element name="analysisDataResponseType" type="tns:analysisDataResponseType"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<element name="summaryDataResponseType" type="tns:summaryDataResponseType" />
+	<element name="trackingSummaryResponseType" type="tns:trackingSummaryResponseType" />
+	<element name="trackingDataResponseType" type="tns:trackingDataResponseType" />
+	<element name="analysisDataResponse" type="tns:analysisDataResponseType" />
+	<element name="baseDataResponseType" type="tns:baseDataResponseType" />
+	<element name="patternFilterResponseType" type="tns:patternFilterResponseType" />
+</schema>

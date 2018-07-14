@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kep/kepservices/monitoring"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kep/kepservices/monitoring"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<complexType name="knowledgeSeekerReqRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" name="customerIds" type="xs:string"
+				minOccurs="0" />
+			<element maxOccurs="unbounded" name="fleets" type="xs:string"
+				minOccurs="0" />
+			<element maxOccurs="unbounded" name="models" type="xs:string"
+				minOccurs="0" />
+			<element maxOccurs="unbounded" name="configs" type="xs:string"
+				minOccurs="0" />
+			<element maxOccurs="unbounded" name="unitNos" type="xs:string"
+				minOccurs="0" />
+			<element name="fromdate" type="xs:string" minOccurs="0" />
+			<element name="todate" type="xs:string" minOccurs="0" />
+			<element name="excludeFilter" type="xs:boolean" minOccurs="0" />
+			<element name="failureType" type="xs:string" minOccurs="0" />
+			<element name="runname" type="xs:string" minOccurs="0" />
+			<element name="datafilterParam" type="xs:string" minOccurs="0" />
+			<element name="datafilterFunction" type="xs:string"
+				minOccurs="0" />
+			<element name="datafilterParamValue1" type="xs:string"
+				minOccurs="0" />
+			<element name="datafilterParamValue2" type="xs:string"
+				minOccurs="0" />
+			<element name="classificationwin" type="xs:string" minOccurs="0" />
+			<element name="segmentwin" type="xs:string" minOccurs="0" />
+			<element name="normwindowlimit" type="xs:string" minOccurs="0" />
+			<element name="classificationstep" type="xs:string"
+				minOccurs="0" />
+			<element name="progexclude" type="xs:string" minOccurs="0" />
+			<element name="normconditionperc" type="xs:string" minOccurs="0" />
+			<element name="supportlevelperc" type="xs:string" minOccurs="0" />
+			<element name="userName" type="xs:string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="knowledgeSeekerReqResponseType">
+		<sequence>
+			<element name="trackingID" type="xs:int" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="knowledgeSeekerReqRequestType" type="tns:knowledgeSeekerReqRequestType" />
+	<element name="knowledgeSeekerReqResponseType" type="tns:knowledgeSeekerReqResponseType" />
+
+</schema>

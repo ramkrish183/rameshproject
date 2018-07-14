@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/security 
+           http://www.springframework.org/schema/security/spring-security-3.0.xsd
+           http://www.springframework.org/schema/lang 
+           http://www.springframework.org/schema/lang/spring-lang-3.0.xsd
+           http://www.springframework.org/schema/util           
+           http://www.springframework.org/schema/util/spring-util-3.0.xsd 
+           http://www.springframework.org/schema/jee 
+           http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+
+	<context:component-scan
+		base-package="com.ge.trans.rmd.services.kep,com.ge.trans.rmd.common.exception,com.ge.trans.eoa.services.kep" />
+
+	<import
+		resource="classpath:com/ge/trans/eoa/services/kep/common/resources/KepServiceBeanContext.xml" />
+
+	<bean id="omdResourceMessagesIntf" class="com.ge.trans.rmd.common.impl.OMDResourceMessagesImpl">
+		<property name="messageSource">
+			<ref bean="messageSourceImpl" />
+		</property>
+	</bean>
+
+
+	<bean id="messageSourceImpl"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename">
+			<value>
+				classpath:com/ge/trans/rmd/common/OMDMessages
+			</value>
+		</property>
+	</bean>
+</beans>
