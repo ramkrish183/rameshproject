@@ -1,0 +1,136 @@
+
+@import url("../vendor/jquery.tagit.css");
+@import url("../vendor/jquery-ui.min.css");
+@import url("../app/editor.css");
+@import url("../vendor/token-input.css");
+@import url("../vendor/token-input-facebook.css");
+
+div.re .tab-content { 
+	overflow: visible;
+}
+
+.ms-container select~.btn-group,
+.ms-container .btn-group .multiselect.btn {
+    width: 100%;
+}
+
+.rule-overview-form .control-group {
+	/*min-height: 6em;*/
+	margin-bottom:0px;
+}
+
+.rule-def-param {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+ul.tags.tagit {
+    font-size: 1em;
+    border: 0;
+   /* border-radius: 0;*/
+}
+ul.tags.tagit li {
+    margin: 0px 2px;
+    padding: 0;
+     /* border-radius: 0;*/
+}
+
+ul.token-input-list-facebook {
+    width: 100%;
+    height: 240px;
+    overflow:auto;
+}
+
+
+.rx-half-block {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+.rx-half-block .btn-group{
+    width: 98%;
+}
+
+#rx-merge-modal-div .message {
+    margin-top: 1em;
+}
+#rx-merge-modal-div .modal-body {
+    overflow: visible;
+}
+
+.dataDetails-container {
+    min-height: 125px;
+}
+.error{color:#ee3324}
+#select-families .btn-group{margin-bottom:10px;}
+#virtdesc{height:70px;}
+
+#select-customers .btn-group{
+	margin-bottom:10px;
+}
+
+#select-types .btn-group,#select-families .btn-group,#select-subsystems .btn-group,#select-types .btn-group .multiselect.btn,#select-families .btn-group .multiselect.btn,#select-subsystems .btn-group .multiselect.btn{
+
+    width: 270px!important;
+}
+
+.virtual-mainpageEquationTxt label{
+	margin-bottom:0px!important;
+	display:inline;
+	margin-right:10px!important;
+}
+/* Rx Plot - Ab*/
+.ms-container.parameterDD .control-group label.control-label {
+    width: 80px;
+}
+.ms-container.parameterDD .control-group .controls {
+    margin-right: 45px;
+    margin-left: 100px;
+}
+.container-rx #rxplot input, .container-rx #rxplot .btn-primary {
+    /*font-family: "ge-inspira";
+    font-size: 15px;*/
+}
+.container-rx div.module-body.rxplot {
+    /*font-family: "ge-inspira";*/
+    font-size: 15px;
+}
+.container-rx div.module-body.rxplot .rxplotForm .well hr{
+    margin:10px 0;
+}
+
+.container-rx div.module-body.rxplot .rxplotForm .well .control-group label.radio {
+    width: 50px;
+}
+.container-rx div.module-body.rxplot .rxplotForm .well .control-group label.assocLabel {
+    float: right;
+    margin-right: 35px;
+}
+.container-rx div.module-body.rxplot .rxplotForm .well .assocSec .controls{
+    margin-left: 0;
+}
+.container-rx div.module-body.rxplot .rxplotForm .well .controls .plotParameter {
+    width: 100%;
+    margin-right: 45px;
+}
+.container-rx div.module-body.rxplot .rxplotForm .well .assocSec .controls span {
+    width: auto;
+}
+.container-rx #rxplot .axesSec .well{
+    width: 100%;
+}
+.container-rx #rxplot .axesSec .well hr {
+    margin: 5px 0;
+}
+.container-rx #rxplot .axesSec .well .control-group label.control-label {
+    width: 125px;
+}
+.container-rx #rxplot .axesSec .well .control-group .controls {
+    margin-left: 135px;
+}
+.container-rx #rxplot .axesSec .well .control-group .controls input[type="text"] {
+    width: 90%;
+}
+
+/* Rx Plot ends here - Ab*/

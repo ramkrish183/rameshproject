@@ -1,0 +1,35 @@
+{
+  "name": "iids-navbar",
+  "description": "Variant of the GE Bootstrap navbar specifically for use within IIDS.",
+  "version": "0.9.6",
+  "main": [
+    "js/iids-navbar.js",
+    "less/iids-navbar.less",
+    "less/responsive.less"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    ".*",
+    "Gruntfile.js",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "message-list": "dxc/message-list#~0.4.0",
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0",
+    "responsive-emitter": "dxc/responsive-emitter#~0.6.0",
+    "respond": "https://github.com/GeneralElectric/Respond.git#~1.2.1"
+  },
+  "gitHead": "551504076b8b5474784fa506fbbb9e6de18f4c09",
+  "readme": "# IIDS Navbar",
+  "readmeFilename": "README.md",
+  "_id": "iids-navbar@0.9.6",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/iids-navbar.git"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "responsive-tables",
+  "version": "0.2.4",
+  "main": [
+    "js/responsive-tables.js",
+    "less/responsive.less"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0",
+    "respond": "https://github.com/GeneralElectric/Respond.git#~1.2.1"
+  },
+  "gitHead": "314f9b9cdfceaddf82e5ac13fc87837969336b52",
+  "readme": "# Responsive Tables\n===============\n\nA JavaScript/CSS plugin to enable small-screen-friendly, alternate views of HTML `table` elements. Works in conjunction with HTML `class` attributes to show or hide content at appropriate breakpoints.\n\n## Structure\n\n- **Readme.md** — this document\n- **History.md** — history/changelog file\n- **package.json** — An [npm](https://npmjs.org/) package file specifying information and dependencies\n- **Gruntfile.js** — A build file for the [Grunt](http://gruntjs.com/) task runner.\n- **bower.json** — A [Bower](http://bower.io/) package file for specifying information and dependencies\n- **.bowerrc** — A configuration file for Bower which tells it to look for modules on GE's Stash server\n- **.jshintrc** — [JSHint](http://www.jshint.com/) configuration file for managing JavaScript code quality\n- **.editorconfig** — [EditorConfig](http://editorconfig.org/) configuration file for managing coding styles within IDEs.\n- **js/** — this component's `.js` file and a [RequireJS](http://requirejs.org/) config file\n- **less/** —  [LESS](http://lesscss.org/) stylesheets for basic and responsive styles\n- **test/** — This folder contains a test page demonstrating the Responsive Tables component.\n\n## Getting Started\n`responsive-tables` works by searching for the classes `essential` and `optional` on a table's `th` elements, if that table has the class `responsive`.  JavaScript then adds these classes to subsequent `td`s with the same row positions.\n\nBy default `responsive-tables` hides all `th` and `td` elements on the smallest screen sizes (phone, both portrait and landscape orientations). Adding a class of `essential` to `th` ensures the associated table column will display on even the smallest screens. Adding the class `optional` ensures the associated table column will display on bigger, though constrained, screens, such as tablets.\n\n## Using\n- Determine which table columns you want to show at appropriate breakpoints (phone portrait/landscape, tablet portrait/landscape, desktop, large desktop).\n- Add the class `responsive` to each `table` you want to have this treatment.\n- Add the class `essential` to the `th` leading the column(s) you want to display in all screen sizes.\n- Add the class `optional` to the `th` leading the columns(s) you want to display in all but the smallest screen sizes.\n- If you want support for IE8, you must use the RespondJS polyfill to force the browser to recognize CSS media queries. Use this link to the script in your HTML:\n\n> `<script src=\"../components/respond/respond.src.js\"></script>`\n\n## Note\nThis component does not function on tables combining cells and rows with colspan and rowspan.\n\n## Customizing\nYou can redefine the breakpoints for `.essential`  and `.optional`  in your own LESS or CSS files.\n\n",
+  "readmeFilename": "Readme.md",
+  "_id": "responsive-tables@0.2.4",
+  "description": "===============",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/responsive-tables.git"
+  }
+}

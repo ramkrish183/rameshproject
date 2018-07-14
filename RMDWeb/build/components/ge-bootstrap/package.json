@@ -1,0 +1,19 @@
+{
+  "name": "ge-bootstrap",
+  "author": "General Electric",
+  "description": "GE brand-themed version of Bootstrap.",
+  "version": "0.6.14",
+  "private": true,
+  "homepage": "http://gesdh.com/",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-less": "~0.6.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-bower-requirejs": "~0.5.0",
+    "grunt": "~0.4.1",
+    "bower": "~0.10.0"
+  },
+  "scripts": {
+    "postinstall": "grunt"
+  }
+}

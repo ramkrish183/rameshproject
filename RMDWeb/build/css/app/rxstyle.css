@@ -1,0 +1,1380 @@
+
+/*------- Style for Rx Authorization Tab------*/
+
+/* Table RXs*/
+
+/* Font family & size changes for Rx tab - Ab */ 
+/*body, input, button, select, textarea, body .btn {
+    font-family: "ge-inspira",Verdana,Arial,sans-serif;
+    font-size: 15px;
+}
+.nav-pills > li > a, .btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover, .table th, .table td {
+    font-size: 13px;
+}
+label, input, button, select, textarea {
+    font-size: 15px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    font-size: 13px;
+}*/
+/* Font family & size changes for Rx tab ends here - Ab */ 
+
+
+.container-rx {
+    margin:5px 0 0 0;
+}
+.container-rx .table-rxs {
+    border-left:1px solid #D8D9D8;
+    border-right:1px solid #D8D9D8;
+    margin-bottom:20px;
+}
+.container-rx .table-rxs tr{
+    border-bottom:1px solid #D8D9D8;
+}
+.container-rx .table-rxs table{
+    border-top:1px solid #D8D9D8;
+    width:100%;
+}
+.container-rx .table-rxs td {
+    padding:5px;
+}
+.container-rx .table-rxs td, .container-rx .table-rxs th {
+    text-align:left;
+    font-size:11px;
+    vertical-align:top;
+}
+.container-rx .table-rxs .firstSubLevel .w-4 {
+    float:left;
+    height:116px;
+    text-align:center;
+    width:20px;
+    margin-right:5px;
+}
+.container-rx .table-rxs .secondsublevel .w-4 {
+    float:left;
+    height:115px;
+    text-align:center;
+    width:40px;
+    margin-right:5px;
+}
+.container-rx .table-rxs .firstSubLevel .txtarea {
+    min-width:385px;
+	width:94%;
+}
+.container-rx .table-rxs .secondsublevel .txtarea {
+    min-width:365px;
+	width:81%;
+}
+.container-rx .table-rxs th {
+    padding:0 5px;
+    vertical-align:middle;
+}
+.container-rx .table-rxs .col1, .container-rx .table-rxs .col2, .container-rx .table-rxs .col4, .container-rx .thead .col1, .container-rx .thead .col2, .container-rx .thead .col4 {
+    float:left;
+    padding:5px;
+    width:16%;
+    position:relative;
+}
+.container-rx .table-rxs .col5, .thead .col5 {
+    float:left;
+    padding:5px;
+    width:14%;
+}
+.container-rx .table-rxs .col3, .container-rx .thead .col3 {
+    float:left;
+    padding:5px;
+    width:22%;
+}
+.container-rx .table-rxs .col4 a {
+    display:block;
+    font-size:11px;
+}
+.container-rx .table-rxs .col4 span .removeRepCode {
+    color:#3b73b9;
+	cursor:pointer;
+	font-weight:normal;
+}
+.container-rx .table-rxs .txtarea {
+    min-width:409px;
+	width:98%;
+    height:100px;
+    border:1px solid #dadada;
+    padding:5px;
+    margin-bottom:0;
+    float:left;
+    resize:vertical;
+    overflow:auto;
+}
+.container-rx .wrap-txtarea {
+    position:relative;
+}
+.container-rx .wrap-txtarea label.error {
+    display:table;
+    margin-bottom:5px;
+}
+.container-rx .table-rxs .tasks label.error {
+    display:table;
+    font-size:10px;
+    margin-bottom:0px;
+}
+.container-rx .table-rxs .tasks {
+    float:left;
+    /*width:287px;*/
+    width:300px;
+     margin: 6px 0 10px;
+}
+.container-rx .table-rxs .secondsublevel .tasks {
+    margin-left:0;
+    width:330px;
+}
+.container-rx .table-rxs .firstSubLevel table{
+	border-right:none;
+	border-left:none;
+}
+/*.container-rx .table-rxs td.no-border {
+    border-bottom:0px none;
+}*/
+.container-rx #select-subsystem .control-group, .container-rx #select-subsystem.span6{
+    margin-bottom:0px;
+}
+.container-rx .table-rxs label {
+    float:left;
+    font-size:11px;
+    margin: 7px 5px 0 0;
+    color:#404040;
+}
+.container-rx .table-rxs label.error, .popupDiv label.error, label.error, div.error{
+     color: #ee3324;
+     clear:none;
+     padding-top:2px;
+}
+.container-rx .table-rxs .txt {
+    float:left;
+    border:1px solid #dadada;
+    font-size:11px;
+    color:#333;
+    width:30px;
+    height:18px;
+    padding:0 6px;
+    margin: 0 15px 0 0;
+}
+.container-rx .table-rxs .order {
+    float:left;
+    width:10%;
+    text-align:center;
+}
+.container-rx .table-rxs .order-1 {
+    float:left;
+    width:20%;
+    text-align:center;
+}
+.container-rx .table-rxs .task-details-1 {
+    float:left;
+    width:80%;
+    text-align:center;
+}
+.container-rx .task-details {
+    float:right;
+    width:90%;
+}
+.container-rx .icon-help {
+    background: url("../../img/app/glyphicons-halflings.png") no-repeat -96px -96px;
+    width:14px;
+    display: inline-block;
+    text-indent:-9999em;
+    height:14px;
+}
+.container-rx .thead {
+    margin-top:20px;
+}
+.popup-repaircode ul.ui-multiselect-checkboxes .ui-state-hover-multiselect{
+//    background: #219FDA;
+//    color: #FFFFFF;
+//    border-radius:0px;
+}
+
+.popup-repaircode .ui-multiselect-checkboxes label.ui-state-active-multiselect{
+    border: 0px none;
+    background: #219FDA; /* Old browsers */
+    background: -moz-linear-gradient(top, #219FDA 0%, #219FDA 40%, #219FDA 49%, #219FDA 74%, #219FDA 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#219FDA), color-stop(40%,#219FDA), color-stop(49%,#219FDA), color-stop(74%,#219FDA), color-stop(100%,#219FDA)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #219FDA 0%,#219FDA 40%,#219FDA 49%,#219FDA 74%,#219FDA 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #219FDA 0%,#219FDA 40%,#219FDA 49%,#219FDA 74%,#219FDA 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #219FDA 0%,#219FDA 40%,#219FDA 49%,#219FDA 74%,#219FDA 100%); /* IE10+ */
+    background: linear-gradient(top, #219FDA 0%,#219FDA 40%,#219FDA 49%,#219FDA 74%,#219FDA 100%); /* W3C */
+    -pie-background: linear-gradient(top, #219FDA 0%,#219FDA 40%,#219FDA 49%,#219FDA 74%,#219FDA 100%); 
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    color:#ffffff;
+    font-weight: normal;
+}
+
+.container-rx .thead td {
+    padding:5px;
+}
+.container-rx .thead th {
+    text-align:left;
+    vertical-align:top;
+}
+.container-rx .thead{
+    border-left: 1px solid #D8D9D8;
+    border-right: 1px solid #D8D9D8;
+}
+.container-rx .thead th {
+    padding:0 5px;
+    vertical-align:middle;
+}
+.container-rx .thead tr.rowhighlight_clicked {
+    color:#333;
+}
+.container-rx .thead tbody {
+    cursor:default !important;
+}
+.container-rx .thead tr {
+    background-color: #fbfbfb;
+    background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));
+    background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: linear-gradient(top, #ffffff, #f5f5f5);
+    background-repeat: repeat-x;
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+    border-top: 1px solid #D8D9D8;
+    border-bottom: 1px solid #D8D9D8;
+}
+.container-rx .thead tr th{
+    font-size:11px;
+    background-color: #3f4145; /* Rx Tab Task Table header back color for matching other table's look and feel - sudhananth */
+	color:white; /* Rx Tab Task Table Font color - sudhananth */
+    
+}
+/* Table RXs end*/
+
+.container-rx .tooltippoup {
+    display:none;
+    position:absolute;
+    left:-243px;
+    top:-59px;
+    background:url(../../img/app/bg-tooltip.png) no-repeat 0 0;
+    width:256px;
+    height:209px;
+    z-index:999;
+    float:left;
+}
+.container-rx .tooltippoup img {
+    width:80%;
+    margin: 10%;
+    float:left;
+    height:50%;
+}
+.container-rx .col1 .text {
+    position:relative;
+}
+.container-rx .col1 .text a {
+    font-size:10px;
+    padding-bottom:0;
+    position:relative;
+    z-index:9;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container-rx .col1 .text {
+    margin:0;
+}
+.container-rx .col1 .text .removeIcon {
+    font-size:10px;
+    font-weight:normal;
+    padding-top:0;
+    float:left;
+    position:relative;
+    margin-top:0;
+    margin-bottom:5px;
+    width:100%;
+}
+.container-rx .col1 .text .filename {
+    float:left;
+    width:100%;
+    position:relative;
+}
+.container-rx input, .container-rx textarea, .container-rx select, .container-rx .uneditable-input {
+//    font-family:Verdana, Geneva, sans-serif;
+//    font-size:11px;
+//    border:1px solid #d8d9d8;
+}
+.container-rx textarea {
+    resize:none;
+    padding:3px;
+}
+.container-rx input.buttonBg{
+    border:0px none;
+}
+.container-rx .icon-plus-sign {
+    background-position:left -96px;
+}
+.container-rx .table-rxs .wrap-txtarea {
+    position:relative;
+}
+.container-rx .table-rxs .count {
+    position:relative;    
+    color:#333;
+    font-size:10px;
+    padding:2px;
+    background:#f1f1f1;
+    float:right;
+    right: 16px;
+    bottom: -15px;    
+}
+.container-rx .table-rxs .col4 span {
+    display:block;
+}
+.container-rx .table-rxs .col4 span span {
+    display:inline;
+}
+.container-rx .table-rxs, .container-rx .thead {
+    /*width:1190px;*/
+    width:100%;
+}
+.container-rx .table-rxs tr, .container-rx .thead tr {
+    /*width:1188px;*/
+    width:100%;
+    /*display:block;*/
+}
+.container-rx .wid-actions {
+//    float:right;
+//    width:100%;
+}
+.container-rx .tabSubmit:hover {
+    opacity:0.6;
+}
+.container-rx .btn-center .tabSubmit {
+    margin:0 0 12px 0;
+}
+.container-rx .floatR {
+    float:right;
+}
+.container-rx .padR5 {
+    padding-right:5px;
+}
+.container-rx .wid-actions .btn-center div.btn-save {
+    margin: 0 24px 12px 0;
+}
+.container-rx .wrap-submit {
+    float:left;
+    width:100%;
+    padding:5px 0;
+}
+.container-rx .wrap-submit input {
+    float:left;
+}
+.container-rx .wrap-submit input.btn-task {
+    margin-left:20px;
+}
+/* end added for multiselect */
+
+
+.container-rx tr.rowhighlight_clicked {
+    background-color: #ebf7ff;
+    color: #333;
+}
+.container-rx .rowhighlight_clicked tr.secondsublevel {
+    background-color: #fff!important
+}
+.container-rx .icon-help {
+    margin: 6px 0 0 3px;
+}
+.container-rx table .span1 {
+    float:left;
+}
+.container-rx .overflowHidden {
+    overflow:hidden;
+}
+.container-rx #table-1 tr:first-child td:nth-child(4) .icon-help{/*added by Dumindu*/
+	margin-left:0px;
+}
+/*
+.container-rx .popup-repaircode .row-1 {
+    float:left;
+    width:100%;
+    margin-bottom:10px;
+}
+.container-rx .popup-repaircode button {
+    float:left;
+}
+.container-rx .popup-repaircode label {
+    float:left;
+    width:110px;
+    text-align:left;
+    margin-right:10px;
+}
+.container-rx .popup-repaircode select {
+    float:left;
+    width:250px;
+}
+*/
+.container-rx .iconhelp {
+    float:left;
+    margin:21px 0 0px 5px;
+}
+
+/*.container-rx label.error, .error label.error, label.error{
+    color:#B94A48
+}*/
+.container-rx input[type="submit"] {
+    margin:0 0 0 6px;
+    width:auto;
+}
+.container-rx .popupDiv p {
+    text-align:left;
+    font-size:11px;
+    line-height:17px;
+}
+.container-rx table.tablesorter {
+    width:100%;
+    margin-bottom:15px;
+}
+.container-rx .ui-multiselect-menu input {
+    display:inline;
+    margin:0;
+    line-height:normal;
+}
+.container-rx .ui-multiselect-menu label {
+    margin:0;
+}
+.container-rx div.marginZero {
+    margin:0;
+}
+.container-rx .marginB9 {
+    margin-bottom:9px;
+}
+.container-rx #ul-rxmodal, .container-rx #ul-rxconfigmodal {
+    min-height:26px;
+}
+.container-rx #ul-rxmodal{
+    margin-bottom:0px;
+    margin-top:0;
+}
+.container-rx #ul-rxconfigmodal {
+    margin-top:0px;
+}
+.container-rx .errormodel label.error{
+    margin-bottom:5px;
+} 
+.container-rx #ul-rxmodal li.tagit-new input, .container-rx #ul-rxconfigmodal li.tagit-new input {
+    display:none;
+}
+/* Component containers
+----------------------------------*/
+ 
+/*#configurationForm select.error {
+    border: 0px none;
+    padding:0px;
+    margin:0;
+    visibility:hidden;;
+}
+#configurationForm label.error {
+    display: block;
+    white-space: normal;
+    width: 100%;
+}
+#configurationForm input.error {
+    border: 1px solid #8A1F11;
+    padding:1px;
+}
+#configurationForm input.span1{
+    width:97px;
+}
+#configurationForm .btn-info{
+    margin-right:5px;
+}
+#configurationForm .dd .ddTitle{
+    padding: 1px 5px 1px 0px;
+}*/
+#modal-dialog .btn input {
+    width:auto;
+}
+#modal-dialog input {
+    width:258px;
+}
+#modal-dialog select {
+    width:263px;
+}
+
+.popupDiv #modal-dialog #select-rxmodel select {
+    height:52px;
+    width:263px;
+    float:left;
+    border: 1px solid #d8d9d8;
+}
+.container-rx .MainDrag .col1 a {
+    display:block;
+}
+.table-config {
+//    width:660px;
+//    border-bottom: 1px solid #DDDDDD;
+//    margin-top:13px;
+}
+.table-config th {
+//    border-right: 1px solid #DDDDDD;
+//    background-color: #7F7F7F;
+//    color: #FFFFFF;
+//    font-weight: normal;
+//    height:auto;
+}
+.table-config td {
+//    border-top: 1px solid #DDDDDD;
+//    border-right: 1px solid #DDDDDD;
+}
+.table-config td.last{
+//    border-right:0px none;
+}
+.container-rx .task-lsl, .container-rx .task-usl, .container-rx .task-target {
+    float:left;
+    width:100px;
+}
+
+/* Replaced styles with Bootstrap */
+
+.container-rx .nav-tabs, .merge-clone .nav-tabs {
+    list-style:none;
+    margin:0;
+    padding:0;
+    float:left;
+    width:93%;
+    position:relative;
+    z-index:1;
+    clear:both;
+}
+.container-rx .nav-tabs li, .merge-clone .nav-tabs li {
+    float: left;
+}
+.container-rx .nav-tabs li a, .merge-clone .nav-tabs li a {
+    background: url("../../img/app/sub_menuBg.png") repeat-x scroll 0 0 transparent;
+    border-radius: 0 0 0 0;
+    border-right:1px solid #C9C9C9;
+    color: #333333;
+    margin: 0 0 0 0;
+    padding:0 12px;
+    float: left;
+    height: 27px;
+    line-height: 25px;
+    outline:none;
+    min-width:100px;
+    text-align:center;
+}
+.container-rx .nav-tabs li a:hover, .merge-clone .nav-tabs li a:hover {
+    color: #0099CC;
+}
+.container-rx .nav-tabs li.active a, .container-rx .nav-tabs li.active a:hover, .merge-clone .nav-tabs li.active a {
+    background: #fff; /* Old browsers */
+    color: #0099CC;
+}
+.container-rx .tab-content .tab-pane {
+    display: none;
+    float:left;
+    width:100%;
+    border:0px none!important;
+}
+.container-rx .tab-content .active {
+    display: block;
+}
+.container-rx .row {
+ //   float:left;
+ //   width:100%;
+}
+.container-rx #rxconfigurations .row {
+//    float:left;
+//    min-width:1190px;
+}
+.popupDiv #modal-dialog .row{
+//    float:left;
+//    width:100%;
+}
+.popupDiv #modal-dialog{
+    width:560px;
+    float:left;
+    padding-top:10px;
+}
+.container-rx .span6 {
+//    width:460px;
+ //   float:left;
+}
+.container-rx .span6 label, .container-rx .controls label, .popupDiv label {
+//    display:block;
+//    margin-bottom:6px;
+//    width:100%;
+//    color:#333;
+//    text-align:left;
+}
+.container-rx .span6 label.error, .container-rx .controls label.error, .popupDiv label.error {
+ //   color:#B94A48;
+ //   margin:0;
+}
+.container-rx .span2 {
+//    width: 140px;
+ //   float:left;
+}
+.container-rx .span12 {
+//    width: 806px;
+//    float:left;
+//    height:100px;
+}
+.container-rx .span5, .popupDiv span5 {
+//    width: 389px;
+//    float:left;
+}
+.container-rx select.span5{
+//    width: 395px;
+}
+.container-rx .control-group, .popupDiv .control-group{
+//    margin-bottom:10px;
+//    display:inline-table;
+}
+.container-rx .control-group .control-group, .popupDiv .control-group .control-group{
+//    margin-bottom:0;
+}
+.container-rx div.btn-primary {
+//    padding:0 4px 0 0;
+}
+.container-rx .floatR div.btn-primary{
+//    padding:0 0 0 4px;
+//    margin-left:4px;
+}
+.container-rx .floatR .buttonBg{
+//    margin-left:0;
+}
+.container-rx div.btn-status {
+//    margin:17px 0 0 0;
+}
+.container-rx div.btn-status input.buttonBg{
+//    float:left;
+}
+.container-rx .wid-actions .buttonBg{
+//    margin-left:6px;
+}
+.container-rx .icon-question-sign {
+//    background-position: -96px -96px;
+}
+.container-rx .icon-plus-sign, .icon-question-sign {
+//    background-image: url("../../img/app/glyphicons-halflings.png");
+//    display: inline-block;
+//    width: 14px;
+//    height: 14px;
+//    line-height: 14px;
+//    background-repeat: no-repeat;
+//    vertical-align: text-top;
+}
+.container-rx .icon-plus-sign {
+ //   background-position: left -96px;
+}
+.container-rx .txtarea {
+    float:left;
+    width:100%;
+}
+.container-rx table.table-condensed .span2, .container-rx table.table-condensed .span6 {
+    float:none;
+}
+.popupDiv #modal-dialog select{
+    width:276px;
+}
+.popupDiv input, .popupDiv textarea {
+    border: 1px solid #DADADA;
+}
+.popupDiv input.buttonBg{
+    border:0px none;
+}
+.popupDiv #modal-dialog textarea{
+    width:259px;
+    height:95px;
+}
+.popupDiv select.span5{
+    width:395px;
+}
+.container-rx .span3{
+    width:210px;
+}
+.container-rx .span3, .popupDiv .span3{
+    float:left;
+}
+.popupDiv .span3{
+    width:270px;
+}
+.container-rx .span9  {
+//    width: 980px;
+//    float:right;
+}
+.container-rx .errormodel, .container-rx .errormodel * {
+    margin:0;
+    padding:0;
+    height:0;
+}
+.container-rx .group-model {
+    margin-top:7px;
+}
+.container-rx .group-model div{
+    margin-bottom:28px;
+}
+.container-rx .group-model p{
+    margin-bottom:0;
+}
+div.btn-rxmodel {
+    display:inline-block;
+}
+
+
+.container-rx table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+	border-left: 1px solid #bfc2c5;/*added by sudhananth*/
+    border-right: 1px solid #bfc2c5;/*added by sudhananth*/
+}
+table.dataTable td, table.dataTable th
+{
+height : 10px;/*added by sudhananth*/
+}
+.container-rx .table{
+    width: 100%;
+}
+.table-config{
+    margin-bottom: 13px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.container-rx .table th, .container-rx .table td, .table-config th, .table-config td{
+    padding: 8px;
+    line-height: 13px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+.table-config td{
+    /*padding: 14px 8px;*/
+    padding:10px 8px;
+    vertical-align:middle;
+    line-height: 13px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+/*.table-config tr.height td, .table-config tr.heightfield td{
+    padding:10px 8px 32px 8px;
+}
+.table-config tr.minheight td{
+    padding:10px 8px 20px 8px;
+}*/
+.container-rx .table th {
+    font-weight: bold;
+}
+.container-rx .table thead th, .table-config th {
+    vertical-align: bottom;
+}
+.container-rx .wid-actions .btn, .popupDiv #modal-dialog .btn {
+//    margin-right:4px;
+}
+.wid-actions .btn#addTask, .wid-actions .btn#addsubtask{/*added by Dumindu*/
+	background-color:#3b73b9;
+}
+#modal-dialog .control-group {
+    float:left;
+    width:100%;
+}
+/*
+.popup-content-rx, .popup-repaircode{
+    text-align:left;
+    line-height:18px;
+}
+.popup-repaircode{
+    width:424px;
+    float:left;
+    padding-top:10px;
+}
+.popupDiv #dialoMulti{
+    width:200px;
+}
+*/
+select.configuration{
+    //width:320px;
+}
+.table-config .col-3 .dd .ddTitle span.ddTitleText{
+    width:auto;
+}
+.table-config .dd .ddChild a{
+    white-space:normal;
+}
+.table-config .dd .ddChild a span{
+    display: block;
+    line-height: 14px;
+    padding: 0 2px;
+    text-align:left;
+}
+#addRowDiv .btn-info{
+    margin-right:4px;
+}
+/*
+.popup-repaircode .selectrepair{
+    float:left;
+    width:250px;
+}
+.popupDiv .popup-repaircode label{
+    float:none;
+}
+.popupDiv .popup-repaircode .buttonBgLeft{
+  display:inline-block;
+  float:right;
+}
+.popupDiv .popup-repaircode .row-1{
+    margin-bottom:5px;
+}
+*/
+.popupDiv p{
+    text-align:left;
+    line-height:18px;
+}
+.marginB10{
+    margin-bottom:10px;
+    min-height:36px;
+}
+.container-rx div.error label.error{
+    margin-bottom:0;
+}
+.modelForm{
+    margin-top:30px;
+}
+#tab-merge .tab-content .tab-pane{
+    float:left;
+    width:100%;
+}
+#tab-merge .tab-content .active{
+    display:block;
+}
+
+/* added for merge and copy */
+
+.tasks{
+    float:left;
+    width:530px;
+    margin-top: 26px;
+}
+.tasks table{
+    margin-bottom:10px;
+}
+.wrap-title{
+    float:left;
+    width:100%;
+}
+.wrap-title .row{
+    float:left;
+    width:100%;
+    margin-bottom:10px;
+}
+.wrap-title .chk{
+    float:left;
+    width:15px;
+    height:15px;
+    margin:0px 5px 0 5px;   
+}
+.wrap-title label{
+    float:left;
+    width:55px;
+    margin:0;
+    font-size:11px;
+    text-align:left;
+    font-weight:bold;
+}
+.s1{
+    width:447px;
+    float:left;
+}
+.selected-tasks .s1{
+    width:473px;
+}
+.controllers{
+    float:left;
+    margin:0 20px;
+}
+.controllers .clearboth{
+    margin-bottom:15px;
+    display:table;
+}
+.controllers .btn-group{
+    float:left;
+    margin:80px 0 0 0;
+}
+.selected-tasks{
+    float:left;
+    width:530px;
+    margin-bottom:15px;
+}
+.selected-tasks label{
+    margin-left:0;
+}
+.task-copy-from, .task-copy-to{
+    float:left;
+    width:530px;
+}
+.task-copy-from table, .task-copy-to table{
+    margin-bottom:15px;
+}
+.task-copy-from{
+    margin-right:50px;
+}
+.task-copy-from table{
+    clear:both;
+}
+.btn-copy-from, .btn-copy-to{
+    float:left;
+    width:530px;
+    margin-right:30px;
+}
+.tasks table, .selected-tasks table{
+    clear:both;
+}
+.wrap-task-copy{
+    float:left;
+    width:100%;
+    margin-bottom:30px;
+}
+.w-500{
+    float:left;
+    width:500px;
+    margin:20px 0 0 0;
+}
+.col-500{
+    float:left;
+    width:500px;
+    margin:0 50px 0 0;
+}
+
+/*-- merge clone --*/
+
+.merge-clone .ui-widget-content{
+    background:none;
+    border:0px none;
+}
+.merge-clone .nav-tabs{
+    margin:0 0 20px 0;
+}
+.merge-clone .nav-tabs li.ui-state-hover a {
+    color: #0099CC;
+}
+.merge-clone .nav-tabs li.ui-tabs-selected a, .merge-clone.nav-tabs li.ui-tabs-selected a:hover {
+    background: #fff; /* Old browsers */
+    color: #0099CC;
+}
+.marginL5{
+    margin-left:5px;
+}
+.controllers div.btn-copy{
+    margin-bottom: 90px;
+    margin-top: 38px;
+}
+.w-500 table{
+    clear:both;
+}
+.selected-tasks h3{
+    margin:0 0 10px 0;
+}
+.wrap-title .Title .row , .wrap-title .Impact .row {
+    margin-bottom:0;
+}
+.beforetab-loading{
+    position:absolute;
+}
+
+/* Added for Table scroll */
+
+div.tableContainer {
+ //   clear: both;
+ //   /*height: 185px;*/
+ //   overflow: auto;
+ //   width:530px
+}
+html>body div.tableContainer {
+//    overflow: hidden;
+ //   width: 530px
+}
+div.tableContainer table {
+//    float: left;
+//    width: 530px
+}
+html>body div.tableContainer table {
+ //   width: 530px;
+ //   border: 0 none;
+}
+thead.fixedHeader tr {
+//    position: relative
+}
+html>body thead.fixedHeader tr {
+//    display: block
+}
+html>body tbody.scrollContent {
+//    display: block;
+ //   height: 139px;
+ //   overflow: auto;
+ //   width: 529px
+}
+html > body .selected-tasks tbody.scrollContent{
+ //   height:400px;
+}
+html > body div.tableheight2 tbody.scrollContent{
+//   height:240px;
+}
+html > body div.tableheight1 tbody.scrollContent{
+ //   height:400px;
+}
+html>body tbody.scrollContent {
+ //   border-bottom: 1px solid #D8D9D8;
+}
+html>body .table-noscroll tbody.scrollContent {
+  //  border-bottom: 0px none;
+}
+#rxs-table div, html>body tbody.scrollContent div{
+    text-align:center;
+}
+#rxs-table div img, html>body tbody.scrollContent div img{
+    text-align:center;
+    padding:10px 0;
+}
+div.table-noscroll td.col-6 {
+ //   width:56px;
+}
+html > body div.table-noscroll tbody.scrollContent{
+ //   height:auto;
+}
+div.table-noscroll{
+ //   height:auto;
+}
+.tableContainer .tableContents th.col-1{
+//    width:15px;
+//    border-left: 1px solid #A7A5A5;
+}
+.tableContainer th.col-2{
+//    width:45px;
+}
+.tableContainer th.col-3{
+ //   width:274px;
+}
+.tableContainer th.col-4{
+ //   width:30px;
+}
+.tableContainer th.col-5{
+ //   width:30px;
+}
+.tableContainer th.col-6{
+ //   width:56px;
+ //   border-right: 1px solid #A7A5A5;
+}
+
+.tableContainer td.col-1{
+ //   width:15px;
+}
+.tableContainer td.col-2{
+ //   width:45px;
+}
+.tableContainer td.col-3{
+ //   width:274px;
+}
+.tableContainer td.col-4{
+  //  width:30px;
+}
+.tableContainer td.col-5{
+ //   width:30px;
+}
+.tableContainer td.col-6{
+ //   width:39px; 
+}
+.tableContents td, .tableContents th{
+    text-align:left;
+}
+.tableContainer .tableContents td, .tableContainer .tableContents th{
+//      border-left: 1px solid #D8D9D8;
+}
+.merge-clone table tbody tr.odd td {
+    background-color: #F5F5F5
+}
+.merge-clone table tbody tr.highlight {
+    background-color: #DFDFDE;
+}
+.multiselect-modal{
+ //   width:410px;
+ //   float:left;
+}
+/*
+.popup-repaircode .ui-multiselect span{
+    white-space: normal;
+}
+*/
+ul.ui-multiselect-checkboxes li label.ui-state-active-multiselect span{
+    color:#000 !important;
+}
+#tab-merge{
+    margin-top:50px;
+}
+.container-rx div.txtarea label.error{
+    clear:both;
+}
+.merge-clone table tbody tr:nth-child(2n+1){
+    background-color: #F5F5F5;
+}
+.ajax-tab{
+    float:left;
+    width:100%;
+    min-height:500px;
+    margin-bottom:15px;
+}
+.selected-tasks .tableContainer{
+    margin-bottom:15px;
+}
+.container-rx textarea#rxoverviewtextarea{
+    resize:vertical;
+}
+
+.modal-iconhelp {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+ ul.list-values {
+	max-height: 150px;
+	overflow-y: auto;
+	padding-left:5px;
+}
+ul.list-values li{
+	list-style-type: none;
+	float: left;
+	margin: 2px;
+	display: inline-block;
+}
+ul.list-values .delete-entity{
+	margin-left: 5px;
+	color: #999;
+	font-size: 0.9em;
+	position:relative;
+	top:-1px;
+}
+ul.list-values li.tagit-new{
+	display: none;
+}
+ul.list-values.tagit {
+	margin-left: 0;
+	font-size: 0.9em;
+}
+
+
+#configurationForm .close {
+    visibility: hidden;
+    height: 18px;
+}
+#configurationForm a.close:hover{
+    color:#006080;
+    cursor:pointer
+}
+#configurationForm .hide {
+    display: block;
+}
+#configurationForm .close {
+    color: #000000;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 13px;
+    opacity: 0.5;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+#configurationForm tbody tr.trhighlight td a.hide {
+   visibility: visible;
+}
+
+.popup-repaircode .btn-group {
+    width: 100%;
+    margin: 2px auto 10px;
+}
+.popup-repaircode .btn-group .multiselect.btn {
+    width: 100%;
+}
+
+.del-dnd-row {
+    cursor: pointer;
+}
+.addTask {
+    cursor: pointer;
+}
+.addsubtask {
+    cursor: pointer;
+}
+
+.container-rx .col1 .file-upload-label {
+    width: 100%;
+    margin-top: 0;
+}
+/* fix for question icon alignment*/
+.modal-iconhelp{
+	margin: 33px 0 0 5px;
+}
+a.modal-iconhelp:hover {
+    text-decoration: none;
+}
+/* fix for question icon alignment ends hear*/
+/* fix for error msgs color in config tab*/
+#configurationForm .ddOutOfVision label.error {
+    margin: 0;
+    clear: both;
+}
+#configurationForm label.error {
+    display: block;
+    white-space: normal;
+    width: 100%;
+    font-size: 11px;
+    color: #ee3324;
+    padding-top: 2px;
+    clear: none;
+    float: none;
+    text-align: left;
+    margin: 7px 5px 0 0;
+}
+/* fix for error msgs color in config tab end hear*/
+.container-rx .table-rxs .col1, .container-rx .thead .col1{width:10%;}
+.container-rx .table-rxs .col2, .container-rx .thead .col2{width:14%}
+.container-rx .table-rxs .col3, .container-rx .thead .col3{width:15%}
+.container-rx .table-rxs .col4, .container-rx .thead .col4{width:12%}
+.container-rx .table-rxs .col5, .container-rx .thead .col5{width:6%}
+.container-rx .thead .colTask{
+	float: left;
+	padding: 5px;
+	width: 15%;
+}
+
+.container-rx .table-rxs .col6, .container-rx .thead .col6 {
+    float: left;
+    padding: 5px;
+    width: 15%;
+}
+.container-rx .table-rxs .col7, .thead .col7{
+	float: left;
+    padding: 5px;
+    width: 13%;
+}
+
+
+.ui-sortable tbody{cursor:move;}
+.tab-content.container-rx{overflow:inherit;}
+.container-rx .table-rxs label{margin:0px 3px 0px 0px;}
+.container-rx .table-rxs .col2{/*padding-left:2px;*/}
+/* styles for adding space for placeholder in drag n drop in tasks*/
+.tableDataStyle tbody.ui-sortable-placeholder {
+  display: block;
+  position: relative;
+ }
+  .tableDataStyle tbody.ui-sortable-placeholder:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+/* styles for adding space for placeholder in drag n drop in tasks*/
+.table-bordered th:first-child[rowspan], .table-bordered td:first-child[rowspan]{
+	right:0px;
+}
+.container-rx .table-rxs label.radio{
+	width:100%;
+	text-align:center;
+}
+.container-rx .table-rxs .dropdown-menu li > a{
+	padding:3px 0px;
+}
+.container-rx .table-rxs .select-conditionalvalue .dropdown-menu li > a{
+	padding:3px 20px;
+}
+.repairCode .icon-plus-sign{    
+	margin-right: 3px;
+    float: left;
+    margin-top: 5px;
+	}
+.popup-repaircode.modal{width:840px;transform: translate(-18%, 0); }
+.select-entities{text-align:left !important;}
+
+.container-rx .col1 .text .filename[data-delete="Y"]{
+	display: none;
+}
+
+/*model,customer in RX configuration styles*/
+.list-values li{
+	padding: .2em .4em .2em .5em;
+	position: relative;
+	font-size: 0.9em;
+	line-height:inherit;
+	border: 1px solid #CCCCCC;
+    color: #1C94C4;
+    font-weight: bold;
+	font-family: "ge-inspira",Verdana,Arial,sans-serif;
+	display: block;
+    float: left;
+    margin: 2px 5px 2px 0;
+    overflow: hidden;
+	border-radius: 4px;
+	background: url(../../img/vendor/ui-bg_glass_100_f6f6f6_1x400.png) repeat-x scroll 50% 50%; 
+}
+
+.rxReadOnlyLabel{	
+	padding-top:6px;
+	margin-bottom:0px!important;	
+	}
+	
+	.taskIcons{	
+	  padding-left:3px;
+	  font-size:14px;
+	}
+	
+	.condvaluehide .col6{
+	    width:8%!important;
+	} 
+	.labelText{
+font-weight:bold;
+}
+
+.valueText{
+
+margin:5px!important;
+
+}
+/* CK editor required changes for Task textarea - Ab*/
+.container-rx .table-rxs .wrap-txtarea .cke_textarea_inline {
+    /*width: 705px;*/
+    height: 100px;
+    border: 1px solid #e1e2e5;
+    padding: 2px 4px;
+    margin-bottom: 10px;
+    /*margin-top: 80px;*/
+    overflow: auto;
+    font-size:12px!important;
+}
+.container-rx .table-rxs .wrap-txtarea .cke_textarea_inline table td,.container-rx .table-rxs .wrap-txtarea .cke_textarea_inline table th{
+    
+    font-size:12px!important;
+}
+/* CK editor required changes for Task textarea ends here - Ab*/
+.container-rx input[type="text"]{
+	height:26px!important;
+}
+.container-rx .data-label{
+	font-weight:bolder;
+}
+
+.container-rx .rxOverViewForm .wrap-txtarea .cke_textarea_inline {
+    /* width: 705px; */
+    height: 70px;
+    border: 1px solid #e1e2e5;
+    padding: 2px 4px;
+    margin-bottom: 10px;
+    /* margin-top: 80px; */
+    overflow: auto;
+    font-size: 12px!important;
+    line-height: 12px;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "collapsible-list",
+  "version": "0.2.2",
+  "main": [
+    "js/collapsible-list.js",
+    "less/collapsible-list.less",
+    "less/collapsible-list-responsive.less"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0"
+  },
+  "devDependencies": {
+    "jasmine": "latest"
+  },
+  "gitHead": "56f4d613321eb312c6abd266f0051421b7b66d64",
+  "readme": "Collapsible-List\n===============\n\n## Introduction\n\nCollapsible List is a tree component for layering small sets of items.\n\nLimited by design to 3 levels of navigation\n\n## Basic Usage\n\nAdd the \"collapsible-list\" class to your ul element\n\n    <ul class=\"collapsible-list\">\n\n## Class Options\n\ncollapsible-list-parent : add to your anchor tags that have children\n\nnav-header : unselectable li item\n\nsecondary : add to ul to create 2nd level items\n\ntertiary : add to ul to create 3rd level items\n\ncollapsible-list-subnav : add to li to create collapsible item\n\n## Example\n\n    <ul class=\"collapsible-list\">\n      <li class=\"nav-header\">List Header</li>\n      <li class=\"collapsible-list-subnav\">\n        <a href=\"#\">Primary Nav 1</a>\n\n        <ul class=\"collapsible-list secondary\">\n          <li class=\"collapsible-list-subnav\">\n            <a href=\"#\">Secondary Nav 1</a>\n\n            <ul class=\"collapsible-list tertiary\">\n              <li>\n                 <a href=\"#\">Tertiary Nav 1</a>\n              </li>\n            </ul>\n\n          </li>\n        </ul>\n\n      </li>\n      <li class=\"collapsible-list-subnav\">\n        <a href=\"#\">Primary Nav 2</a>\n\n        <ul class=\"collapsible-list secondary\">\n          <li>\n            <a href=\"#\">Secondary Nav 2</a>\n          </li>\n        </ul>\n\n      </li>\n      <li><a href=\"#\">Primary Nav 3</a></li>\n      <li class=\"nav-header\">Another List Header</li>\n      <li><a href=\"#\">Primary Nav 4</a></li>\n      <li><a href=\"#\">Primary Nav 5</a></li>\n    </ul>\n",
+  "readmeFilename": "Readme.md",
+  "_id": "collapsible-list@0.2.2",
+  "description": "Collapsible-List ===============",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/collapsible-list.git"
+  }
+}

@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+
+<level-0 resourceId="RMD" type="root" label="menu.label.RMD">
+	
+	<level-1 resourceId="WELCOME" type="page"
+		label="menu.label.welcome" descr="Welcome Page" url="/RMDWeb/getWelcome"
+		filterFlag="0">
+	</level-1>
+	<level-1 resourceId="CASES" type="folder" label="menu.label.cases"
+		descr="Cases Menu" url="#subTabCASES" filterFlag="0">
+		<level-2 resourceId="SUBMENU_CASES_OVERVIEW" type="page"
+			label="menu.label.overview" descr="Overview Page" url="/RMDWeb/overview"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CASES_CASES" type="page"
+			label="menu.label.subcases" descr="Cases page" url="/RMDWeb/cases"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CASES_MYCASES" type="page"
+			label="menu.label.mycases" descr="User Cases page" url="/RMDWeb/myCases"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CASES_QUEUE" type="page"
+			label="menu.label.queues" descr="Queue Cases page" url="/RMDWeb/queues"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CASES_DATA" type="page"
+			label="menu.label.data" descr="data page" url="/RMDWeb/data"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CASES_NOTES" type="page"
+			label="menu.label.notes" descr="Notes page" url="/RMDWeb/notes"
+			filterFlag="0" />
+	</level-1>
+
+	<level-1 resourceId="TECHNICIAN_CASES" type="page" label="menu.label.tCases"
+		descr="tCases Page" url="#TechSubTabs" filterFlag="0">
+		<level-2 resourceId="SUBMENU_OPEN_RXs" type="page"
+			label="menu.label.OpenCases" descr="tOpenCases Page" url="/RMDWeb/getCases"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CLOSED_RXs" type="page"
+			label="menu.label.ClosedCases" descr="tClosedCases page" url="/RMDWeb/getClosedRxCases"
+			filterFlag="0" />
+	</level-1>
+	<level-1 resourceId="KPIs" type="folder" label="menu.label.kpi"
+		descr="kpi Menu" url="#subTabKPIs" filterFlag="0">
+
+		<level-2 resourceId="SUBMENU_KPIs_SOLUTION" type="page"
+			label="menu.label.rxs" descr="kpi Page" url="/RMDWeb/getKPIs"
+			filterFlag="0" />
+
+		<level-2 resourceId="SUBMENU_KPIs_COMMUNICATION" type="page"
+			label="menu.label.communication" descr="kpi Page" url="/RMDWeb/notes"
+			filterFlag="0" />
+
+		<level-2 resourceId="SUBMENU_KPIs_PRODUCTIVITY" type="page"
+			label="menu.label.productivity" descr="kpi Page" url="/RMDWeb/notes"
+			filterFlag="0" />
+
+	</level-1>
+	<level-1 resourceId="FLEETS" type="page" label="menu.label.fleet"
+		descr="kpi Page" url="#subTabFleets" filterFlag="0">
+		<level-2 resourceId="SUBMENU_FLEETS"
+			type="page" label="menu.label.fleet" descr="SubTabA"
+			url="/RMDWeb/getFleet" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_FLEET_DATA_SCREEN"
+			type="page" label="asset.cases.datascreen" descr="SubTabA"
+			url="/RMDWeb/getFleetDataScreenPage" filterFlag="0" />
+	</level-1>
+	<level-1 resourceId="ALERT_SUBSCRIPTION" type="page"
+		label="menu.label.alertSubscription" descr="alertSubscription Page"
+		url="/RMDWeb/getAlertSubscription" filterFlag="0">
+	</level-1>
+	<level-1 resourceId="VIEW" type="page" label="menu.label.view"
+		descr="View Page" url="#subTabVIEW" filterFlag="0">
+		<level-2 resourceId="SUBMENU_VIEW_FAULT_SERVICE_STRATEGY"
+			type="page" label="menu.label.FaultServiceStrategy" descr="view Fault Service Page"
+			url="/RMDWeb/viewFaultService" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_SHIP_UNITS" type="page"
+			label="menu.label.shipUnits" descr="Ship Units Screen" url="/RMDWeb/showShippersPage"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_EDIT_VEHICLE_CFG" type="page"
+			label="menu.label.vehicleCfg" descr="view / Edit Vehicle Configuration"
+			url="/RMDWeb/viewEditVehicleCfg" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_ADD_NOTES" type="page"
+			label="menu.label.addNotes" descr="Add Notes Screen" url="/RMDWeb/addNotes"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_ADMINISTRATION_NOTIFICATIONS"
+			type="page" label="menu.label.subscription" descr="Notification Page"
+			url="/RMDWeb/notificationManagement" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_EMETRICS" type="page"
+			label="menu.label.emetrics" descr="Emetrics Page" url="/RMDWeb/showEmetricsScreen"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_OILFAULTS" type="page"
+			label="menu.label.oilfault" descr="OilFault Page" url="/RMDWeb/showOilFaultsScreen"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_HEALTH_CHECK_REQUEST" type="page"
+			label="menu.label.healthCheck" descr="Health check Request Screen"
+			url="/RMDWeb/healthcheck" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_UNIT_RENUMBERING" type="page"
+			label="menu.label.unitRenumber" descr="Renumber route"
+			url="/RMDWeb/getUnitRenumberingPage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_RX_RESEARCH" type="page"
+			label="menu.label.RxResearch" descr="RX Research screen"
+			url="/RMDWeb/getRXResearchPage" filterFlag="0" />
+	</level-1>
+	<!-- This is for hiding the Dummy tabs. <level-1 resourceId="SOLUTIONS" 
+		type="page" label="menu.label.solutions" descr="solutions" url="/RMDWeb/solutions" 
+		filterFlag="0"/> <level-1 resourceId="SHOPS" type="page" label="menu.label.shops" 
+		descr="shops Page" url="/RMDWeb/shops" filterFlag="1"> </level-1> -->
+	<!-- New Tabs iTools added which overlaps KM Tabs, iMine,iTest,Rule and 
+		Virtual Start -->
+	<level-1 resourceId="ITOOLS" type="folder" label="menu.label.itools"
+		descr="Tools Menu" url="#subTabITOOLS" filterFlag="0">
+
+		<level-2 resourceId="SUBMENU_ITOOLS_IMINE" type="page"
+			label="menu.label.imine" descr="imine Page" url="/RMDWeb/knowledgeSeekerResult"
+			filterFlag="0">
+		</level-2>
+
+		<level-2 resourceId="SUBMENU_ITOOLS_ITEST" type="page"
+			label="menu.label.itest" descr="itest Page" url="/RMDWeb/getTesterTrackings"
+			filterFlag="0">
+		</level-2>
+
+		<level-2 resourceId="SUBMENU_ITOOLS_RULE" type="page"
+			label="menu.label.rule" descr="rule Page" url="/RMDWeb/getRuleSearchResults"
+			filterFlag="0">
+		</level-2>
+
+		<level-2 resourceId="SUBMENU_ITOOLS_VIRTUAL" type="page"
+			label="menu.label.virtual" descr="virtual Page" url="/RMDWeb/showVirtual"
+			filterFlag="0">
+		</level-2>
+
+		<!-- Added By Amuthan for CBR -->
+		<level-2 resourceId="SUBMENU_ITOOLS_CBR" type="page" label="menu.label.cbr"
+			descr="CBR Admin Page" url="/RMDWeb/rxMaintenance" filterFlag="0">
+		</level-2>
+		
+		<!-- Added by Sri for Hits -->
+		<level-2 resourceId="SUBMENU_ITOOLS_HITS" type="page" label="menu.label.hits"
+			descr="Hits Page" url="/RMDWeb/getRuleHitsPage" filterFlag="0">
+		</level-2>
+		
+		<!-- Added by Sri for Misses -->
+		<level-2 resourceId="SUBMENU_ITOOLS_MISSES" type="page" label="menu.label.misses"
+			descr="Misses Page" url="/RMDWeb/getRuleMissesPage" filterFlag="0">
+		</level-2>
+		<!-- Added By Amuthan for CBR -->
+	</level-1>
+	
+	<!-- Added by Sri for Rule Details Tab  - Hits -->
+	<level-1 resourceId="RULEDETAILS_STICKYTAB" descr="Sticky Tab Menu"
+		url="/RMDWeb/stickyTab" filterFlag="0" type="folder">
+	</level-1>
+	<!-- New Tabs iTools added which overlaps KM Tabs, iMine,iTest,Rule and 
+		Virtual End -->
+	<!-- <level-1 resourceId="IMINE" type="page" label="menu.label.imine" descr="imine 
+		Page" url="/RMDWeb/knowledgeSeekerResult" filterFlag="0"> level-2 resourceId="SUB_TAB_CASE_A" 
+		label="menu.label.subtabA" descr="SubTabA" url="" filterFlag="0" type="page" 
+		/ </level-1> <level-1 resourceId="ITEST" type="page" label="menu.label.itest" 
+		descr="itest Page" url="/RMDWeb/getTesterTrackings" filterFlag="0"> </level-1> 
+		<level-1 resourceId="RULE" type="page" label="menu.label.rule" descr="rule 
+		Page" url="/RMDWeb/getRuleSearchResults" filterFlag="0"> </level-1> -->
+
+	<level-1 resourceId="RX" type="folder" label="menu.label.rx"
+		descr="Rx Page" url="#subTabRx">
+		<level-2 resourceId="SUBMENU_RX" type="page"
+			label="menu.label.rx" descr="Rx Page"
+			url="/RMDWeb/getRxSearchResults" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_MULTILINGUAL_RX" type="page"
+			label="menu.label.multilingualRx" descr="MultilingualRx Page"
+			url="/RMDWeb/getDefaultMultilingualRxTranslation" filterFlag="0" />
+		<!-- US251801: Rx Update Workflow - Migrate this process within EoA/OMD - Ryan & Todd -->
+		<level-2 resourceId="SUBMENU_RX_CHANGE_REQUEST" type="page"
+			label="menu.label.RxChangeRequest" descr="Rx Change Request Page"
+			url="/RMDWeb/getRxChangeRequestPage" filterFlag="0" />
+	</level-1>
+
+	<level-1 resourceId="MAP" type="page" label="menu.label.map"
+		descr="Map" url="/RMDWeb/Map" filterFlag="0">
+	</level-1>
+
+	<level-1 resourceId="PINPOINT" type="folder" label="menu.label.assetTracker"
+		descr="Pinpoint Menu" url="#subTabPINPOINT">
+		<level-2 resourceId="SUBMENU_PINPOINT_OVERVIEW" type="page"
+			label="menu.label.pinpointOverview" descr="Pinpoint Overview Page"
+			url="/RMDWeb/pinPointMap" />
+		<level-2 resourceId="SUBMENU_PINPOINT_PROXIMITY" type="page"
+			label="menu.label.proximity" descr="Proximity Page" url="/RMDWeb/getPPProximityPage" />
+		<level-2 resourceId="SUBMENU_PINPOINT_NOTIFICATIONS" type="page"
+			label="menu.label.notifications" descr="Notification Page"
+			url="/RMDWeb/getPPNotificationsPage" />
+		<level-2 resourceId="SUBMENU_PINPOINT_IDLEREPORT" type="page"
+			label="menu.label.idleReport" descr="Idle Report Page" url="/RMDWeb/getPPIdleReportPage" />
+		<level-2 resourceId="SUBMENU_ATS_GEOFENCEREPORT" type="page"
+			label="menu.label.geofenceReport" descr="GeofenceReport Page" url="/RMDWeb/getGeofenceReport" />
+		<level-2 resourceId="SUBMENU_ATS_MANAGEGEOFENCE" type="page"
+			label="menu.label.manageGeofence" descr="Manage Geofence Page" url="/RMDWeb/manageGeofence" />
+		<level-2 resourceId="SUBMENU_ATS_HISTORY" type="page"
+			label="menu.label.history" descr="PP Asset History" url="/RMDWeb/ppAssetHistory" />
+	</level-1>
+	<level-1 resourceId="ADMINISTRATION" type="folder"
+		label="menu.label.administration" descr="Administration Menu" url="#subTabADMINISTRATION"
+		filterFlag="0">
+		<level-2 resourceId="SUBMENU_ADMINISTRATION_USERS" type="page"
+			label="menu.label.users" descr="Users Page" url="/RMDWeb/userManagement"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_ADMINISTRATION_ROLES" type="page"
+			label="menu.label.roles" descr="Roles Page" url="/RMDWeb/roleManagement"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_ADMINISTRATION_NEWS" type="page"
+			label="menu.label.news" descr="News Page" url="/RMDWeb/getNews"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_ADMINISTRATION_EOAONSITE" type="page"
+			label="menu.label.eoaonsite" descr="Roles Page" url="/RMDWeb/eoaOnsiteManagement"
+			filterFlag="0" />
+	</level-1>
+
+
+	<level-1 resourceId="CASE_STICKYTAB" descr="Sticky Tab Menu"
+		url="#CASE_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_CASE_TASKS" label="menu.label.subtabA"
+			descr="SubTabA" url="/RMDWeb/" filterFlag="0" type="page" />
+		<!-- <level-2 resourceId="SUB_TAB_CASE_B" label="menu.label.subtabB" descr="SubTabB" 
+			url="/RMDWeb/data" filterFlag="0" type="page" /> <level-2 resourceId="SUB_TAB_CASE_C" 
+			label="menu.label.subtabC" descr="SubTabC" url="/RMDWeb/notes" filterFlag="0" 
+			type="page" /> -->
+	</level-1>
+	<level-1 resourceId="ASSET_STICKYTAB" descr="Sticky Tab Menu"
+		url="#ASSET_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_ASSET_OVERVIEW" label="menu.label.overviewmap"
+			descr="SubTabA" url="/RMDWeb/assetOverview" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_CASES" label="menu.label.assetcases"
+			descr="SubTabD" url="/RMDWeb/assetCases" filterFlag="0" type="page" />
+			<level-2 resourceId="SUB_TAB_ASSET_SOFTWARE_HISTORY" label="menu.label.softwareHistory"
+			descr="SubTabD" url="/RMDWeb/softwareHistory" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_DATASCREEN" label="menu.label.datascreen"
+			descr="SubTabB" url="/RMDWeb/assetFault" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_DATASCREEN_NEW" label="menu.label.datascreenNew"
+			descr="SubTabB" url="/RMDWeb/assetFaultNew" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_VISUALIZATION" label="menu.label.visualization"
+			descr="SubTabC" url="/RMDWeb/visualization" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_VIEW_MESSAGE_HISTORY"
+			label="menu.label.viewRequestHistory" descr="SubTabC"
+			url="/RMDWeb/viewHCRequestHistory" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_CASES_UTILITY_ASSET_PANEL_BUTTON"
+			label="menu.label.assetPanel" descr="SubTabC"
+			url="/RMDWeb/assetPanel" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_LIFESTATISTICS" label="menu.label.lifeStatistics"
+			descr="SubTabD" url="/RMDWeb/lifeStatistics" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_ASSET_CALLLOG_NOTES" label="menu.label.calllog"
+			descr="SubTabC" url="/RMDWeb/callLog" filterFlag="0" type="page" />		
+		<level-2 resourceId="SUB_TAB_ASSET_COMM_REPORT" label="menu.label.commReport"
+			descr="SubTabD" url="/RMDWeb/commReport" filterFlag="0" type="page" />
+	</level-1>
+
+	<level-1 resourceId="RESULTS_STICKYTAB" descr="Sticky Tab Menu"
+		url="#RESULTS_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_RESULTS_ALLRESULTS" label="menu.label.searchalllist"
+			descr="HEADERSEARCH_ALL" url="/RMDWeb/searchallresults" filterFlag="1"
+			type="page" />
+		<level-2 resourceId="SUB_TAB_RESULTS_CASES" label="menu.label.caselist"
+			descr="HEADERSEARCH_CASES" url="/RMDWeb/caselist" filterFlag="1"
+			type="page" />
+		<level-2 resourceId="SUB_TAB_RESULTS_ASSETS" label="menu.label.assetlist"
+			descr="HEADERSEARCH_ASSETS" url="/RMDWeb/assetlist" filterFlag="1"
+			type="page" />
+
+	</level-1>
+	<level-1 resourceId="RULES_STICKYTAB" descr="Sticky Tab Menu"
+		url="/RMDWeb/stickyTab" filterFlag="0" type="folder">
+	</level-1>
+
+	<level-1 resourceId="PPASSET_STICKYTAB" descr="Sticky Tab Menu"
+		url="#PP_ASSET_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_PPASSET_OVERVIEW" label="menu.label.overviewmap"
+			descr="SubTabA" url="/RMDWeb/ppAssetOverview" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_PPASSET_HISTORY" label="menu.label.ppassethistory"
+			descr="SubTabB" url="/RMDWeb/ppAssetStatusHistory" filterFlag="0"
+			type="page" />
+		<level-2 resourceId="SUB_TAB_PPASSET_NOTIFICATION" label="menu.label.ppassetnotification"
+			descr="SubTabB" url="/RMDWeb/ppAssetNotificationHistory" filterFlag="0"
+			type="page" />
+	</level-1>
+
+	<level-1 resourceId="NEWRX_STICKYTAB" descr="Sticky Tab Menu"
+		url="#NEWRX_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_NEWRX_OVERVIEW" label="menu.label.rx.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_CONFIGURATION" label="menu.label.rx.configuration"
+			descr="Configurations" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_TASKS" label="menu.label.rx.tasks"
+			descr="Tasks" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_PLOT" label="menu.label.rx.plot"
+			descr="Tasks" url="#" filterFlag="0" type="page" />
+	</level-1>
+
+	<level-1 resourceId="EDITRX_STICKYTAB" descr="Sticky Tab Menu"
+		url="#EDITRX_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_NEWRX_OVERVIEW" label="menu.label.rx.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_CONFIGURATION" label="menu.label.rx.configuration"
+			descr="Configurations" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_TASKS" label="menu.label.rx.tasks"
+			descr="Tasks" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRX_PLOT" label="menu.label.rx.plot"
+			descr="Tasks" url="#" filterFlag="0" type="page" />
+	</level-1>
+	<level-1 resourceId="NEWRULE_STICKYTAB" descr="Sticky Tab Menu"
+		url="#NEWRULE_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_NEWRULE_OVERVIEW_NEW" label="menu.label.rule.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_OVERVIEW_EDIT" label="menu.label.rule.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_EDITOR" label="menu.label.rule.editor"
+			descr="Editor" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_RULEDEF" label="menu.label.rule.ruledef"
+			descr="Rule Definition" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_CLRLOGIC" label="menu.label.rule.cleditor"
+			descr="Clearing Logic" url="#" filterFlag="1" type="page" />
+	</level-1>
+	<level-1 resourceId="EDITRULE_STICKYTAB" descr="Sticky Tab Menu"
+		url="#NEWRULE_STICKYTAB" filterFlag="0" type="folder">
+		<level-2 resourceId="SUB_TAB_NEWRULE_OVERVIEW_NEW" label="menu.label.rule.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_OVERVIEW_EDIT" label="menu.label.rule.overview"
+			descr="Overview" url="#" filterFlag="1" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_EDITOR" label="menu.label.rule.editor"
+			descr="Editor" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_RULEDEF" label="menu.label.rule.ruledef"
+			descr="Rule Definition" url="#" filterFlag="0" type="page" />
+		<level-2 resourceId="SUB_TAB_NEWRULE_CLRLOGIC" label="menu.label.rule.cleditor"
+			descr="Clearing Logic" url="#" filterFlag="1" type="page" />
+	</level-1>
+
+	<level-1 resourceId="NEWIDISCOVER_STICKYTAB" descr="Sticky Tab Menu"
+		url="#NEWIDISCOVER_STICKYTAB" filterFlag="0" type="page">
+		<level-2 resourceId="SUB_NEWIDISCOVER" label="menu.label.imine"
+			descr="iDiscover tab" url="#" filterFlag="0" type="page" />
+	</level-1>
+	<level-1 resourceId="NEWITEST_STICKYTAB" descr="Sticky Tab Menu"
+		url="#NEWITEST_STICKYTAB" filterFlag="0" type="page">
+		<level-2 resourceId="SUB_NEWITEST" label="menu.label.itest"
+			descr="iTest tab" url="#" filterFlag="0" type="page" />
+	</level-1>
+	<level-1 resourceId="EDITIDSCOVER_STICKYTAB" descr="Sticky Tab Menu"
+		url="#EDITIDSCOVER_STICKYTAB" filterFlag="0" type="page">
+		<level-2 resourceId="SUB_EDITIDSCOVER" label="menu.label.imine"
+			descr="iDiscover tab" url="#" filterFlag="0" type="page" />
+
+	</level-1>
+	<level-1 resourceId="EDITITEST_STICKYTAB" descr="Sticky Tab Menu"
+		url="#EDITITEST_STICKYTAB" filterFlag="0" type="page">
+		<level-2 resourceId="SUB_EDITITEST" label="menu.label.itest"
+			descr="iTest tab" url="#" filterFlag="0" type="page" />
+	</level-1>
+	<!-- Added by Amuthan for CBR -->
+	<level-1 resourceId="CBR" type="folder" label="menu.label.cbr"
+		descr="CBR" url="#subTabCBR" filterFlag="0">
+		<level-2 resourceId="SUBMENU_CBR_CASEMAINTENANCE" type="page"
+			label="menu.label.caseMaintenance" descr="CaseMaintenance Page" url="/RMDWeb/caseMaintenance"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CBR_RXMAINTENANCE" type="page"
+			label="menu.label.rxMaintenance" descr="RxMaintenance page" url="/RMDWeb/rxMaintenance"
+			filterFlag="0" />
+
+	</level-1>
+	<!-- Added by Murali for Setup menu -->
+	<level-1 resourceId="SETUP" type="page" label="menu.label.setup"
+		descr="SetUp Page" url="#subTabSETUP" filterFlag="0">
+		<level-2 resourceId="SUBMENU_REPAIR_FACILITY_MAINTENANCE"
+			type="page" label="menu.label.repairFacilityMaintenance" descr="Repair Facility Maintenance Screen"
+			url="/RMDWeb/repairFacilityMaintenance" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_SETUP_REPAIRCODE_MAINTENANCE"
+			type="page" label="menu.label.repaircodemaintenance" descr="Repair code maintenance Screen"
+			url="/RMDWeb/repairCodeMaintenance" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_EDIT_BOM_MAINTANENCE" type="page"
+			label="menu.label.edit_bom_config" descr="BOM Maintenance" url="/RMDWeb/viewBOMMaintanence"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CONFIG_MAINTENANCE" type="page"
+			label="menu.label.configMaintenance" descr="Config Maintenance Screen"
+			url="/RMDWeb/configMaintenance" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_SETUP_DELETE_CONFIGURATION" type="page"
+			label="menu.label.deleteConfig" descr="Delete config Screen" url="/RMDWeb/deleteConfig"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_MASS_APPLY_CONFIG" type="page"
+			label="menu.label.massApplyConfiguration" descr="Mass Apply Configuration Screen"
+			url="/RMDWeb/massApplyCfg" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_POP_UP_LIST_ADMIN" type="page"
+			label="menu.label.popUpListAdmin" descr="Pop Up List Admin Screen"
+			url="/RMDWeb/popUpListAdmin" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_CONFIG_GEOFENCE" type="page"
+			label="menu.label.configGeofence" descr="Config Geofence Page" url="/RMDWeb/configGeofence"
+			filterFlag="0" />	
+		<level-2 resourceId="SUBMENU_AUTO_HC_TEMPLATE" type="page"
+			label="menu.label.autoHCTemplate" descr="auto HC Template screen"
+			url="/RMDWeb/autoHCTemplate" filterFlag="0" />	
+	</level-1>
+
+	<!-- Added for LocoVision Aurizon Project -->
+	<level-1 resourceId="LOCOVISION" type="folder" label="menu.label.locovision"
+		descr="Locovision Menu" url="#subTabLOCOVISION" filterFlag="0">
+		<level-2 resourceId="SUBMENU_LOCOVISION_LDVR_REQUEST" type="page"
+			label="menu.label.manageldvrrequest" descr="manage ldvr request Page"
+			url="/RMDWeb/getManageLDVRRequestPage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_LOCOVISION_LDVR_GEOFENCE" type="page"
+			label="menu.label.ldvrgeofence" descr="manage geofence Page" url="/RMDWeb/getLDVRGeofencePage"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_LOCOVISION_LDVR_APPLY_TEMPLATE"
+			type="page" label="menu.label.ldvrapplytemplate" descr="apply template Page"
+			url="/RMDWeb/getLDVRApplyTemplatePage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_LOCOVISION_LDVR_MANAGE_ASSET_PQ"
+			type="page" label="menu.label.ldvrmanageassetpq" descr="manage asset pq Page"
+			url="/RMDWeb/getLDVRManageAssetPQPage" filterFlag="0" />
+	</level-1>
+	
+	<!-- Added for Find Project -->
+	<level-1 resourceId="FIND" type="folder" label="menu.label.find"
+		descr="Find Menu" url="#subTabFIND" filterFlag="0">
+		<level-2 resourceId="SUBMENU_FIND_CONTACT" type="page"
+			label="menu.label.contact" descr="contact Page" url="/RMDWeb/getContactPage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_FIND_SITE" type="page"
+			label="menu.label.site" descr="site Page" url="/RMDWeb/getSitePage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_FIND_ADDRESS" type="page"
+			label="menu.label.address" descr="address Page" url="/RMDWeb/getAddressPage" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_FIND_CASE" type="page"
+			label="menu.label.findCase" descr="Find Case" url="/RMDWeb/viewFindCase"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_VIEW_FIND_NOTES" type="page"
+			label="menu.label.findNotes" descr="Find Notes Screen" url="/RMDWeb/findNotes"
+			filterFlag="0" />	
+	</level-1>
+	
+	<level-1 resourceId="TURNOVER" type="page" label="menu.label.Turnover"
+		descr="Turnover Page" url="#subTabTURNOVER" filterFlag="0">
+		<level-2 resourceId="SUBMENU_GENERAL_NOTES" type="page"
+			label="menu.label.GeneralNotes" descr="GeneralNotes Page" url="/RMDWeb/generalNotes"
+			filterFlag="0" />
+		<level-2 resourceId="SUBMENU_COMM_NOTES" type="page"
+			label="menu.label.CommNotes" descr="CommNotes Page"
+			url="/RMDWeb/commNotes" filterFlag="0" />
+		<level-2 resourceId="SUBMENU_RUNTURNOVER" type="page"
+			label="menu.label.RunTurnover" descr="RunTurnover Page" url="/RMDWeb/RunTurnover"
+			filterFlag="0" />
+	</level-1>
+	<level-1 resourceId="ALERT_HISTORY" type="page"
+		label="menu.label.alertHistory" descr="alertHistory Page"
+		url="/RMDWeb/getAlertHistoryPage" filterFlag="0">
+	</level-1>
+	<level-1 resourceId="HEAT_MAP" type="page" label="menu.label.heatmap"
+	descr="HeatMap page" url="/RMDWeb/HeatMapPage" filterFlag="0">
+	</level-1>
+	
+    <level-1 resourceId="REPORTS" type="page" label="menu.label.reports"
+              descr="Reports Page" url="#subTabREPORTS" filterFlag="0">
+              <level-2 resourceId="SUBMENU_MINE" type="page"
+                     label="menu.label.mineReport" descr="mine Page"
+                     url="/RMDWeb/mineReport" filterFlag="0" />
+              <level-2 resourceId="SUBMENU_TRUCK" type="page"
+                     label="menu.label.truckReport" descr="truck Page" url="/RMDWeb/truckReport"
+                     filterFlag="0" />              
+     </level-1>
+</level-0>

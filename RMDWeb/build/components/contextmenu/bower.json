@@ -1,0 +1,38 @@
+{
+  "name": "contextmenu",
+  "version": "0.2.3",
+  "main": [
+    "js/contextmenu.js",
+    "less/contextmenu.less",
+    "less/contextmenu-responsive.less"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0",
+    "jQuery-contextMenu": "dxc/jQuery-contextMenu#~1.6.6"
+  },
+  "devDependencies": {
+    "jasmine": "latest"
+  },
+  "gitHead": "6a7a142a4e62bf51f6ec94293f236839e23b269a",
+  "readme": " Context Menu\n===============\n\n## Introduction\n\nContext Menu is extended from the following open source project:\n[jQuery contextMenu](https://github.com/medialize/jQuery-contextMenu)\nEssentially right click to present a menu ala desktop style.\n\n## Basic Usage\n\nAdd the \"contextmenu\" class to your DOM element\n\n    <div class=\"contextmenu span12 test\">Right click in this box</div>\n\nThen add your data elements to the JS of your project\n\n    $.contextMenu({\n          // define which elements trigger this menu\n          selector: \".contextmenu\",\n          // define the elements of the menu\n          items: {\n            \"action1\": {\"name\": \"Action\"},\n            \"action2\": {\"name\": \"Another action\"},\n            \"action3\": {\"name\": \"Something else here\"},\n            \"sep1\": \"---------\",\n            \"fold1\": {\n                \"name\": \"Separated link\",\n                \"items\": {\n                    \"fold1-key1\": {\"name\": \"Action\"},\n                    \"fold1-key3\": {\"name\": \"Another Action\"}\n                }\n            }\n          }\n\n\n## Advanced Usage\n\nRefer to the plugin [Documentation](http://medialize.github.io/jQuery-contextMenu/docs.html)\n\n[Demo Gallery](http://medialize.github.io/jQuery-contextMenu/demo.html)\n",
+  "readmeFilename": "Readme.md",
+  "_id": "contextmenu@0.2.3",
+  "description": "Context Menu ===============",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/contextmenu.git"
+  }
+}

@@ -1,0 +1,56 @@
+// Dependencies
+// --------------------------------------------------
+
+@import "bootstrap/less/responsive-767px-max.less";
+
+
+// Bootstrap Overrides
+// --------------------------------------------------
+
+// Landscape phone, small desktop and portait tablet
+@media (max-width: 767px) {
+  .page-header {
+    > .pull-right {
+      clear: left;
+      float: none;
+    }
+    .nav-pills {
+      margin-bottom: @gridGutterWidth;
+      text-align: left;
+      width: 100%;
+      > li {
+        margin-top: 1px;
+        float: none;
+        width: 100%;
+        &:first-child {
+          margin-top: 0;
+          > a {
+            .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+          }
+        }
+        &:last-child > a {
+          .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+        }
+      }
+    }
+  }
+
+   // append/prepend add-ons match the height of the inputs next to them
+  // .input-append .add-on,
+  // .input-prepend .add-on,
+  // .input-append .btn,
+  // .input-prepend .btn,
+  // .input-append .btn-group > .dropdown-toggle,
+  // .input-prepend .btn-group > .dropdown-toggle {
+  //   min-height: 24px;
+  // }
+
+  // .input-append .btn,
+  // .input-prepend .btn,
+  // .input-append .btn-group > .dropdown-toggle,
+  // .input-prepend .btn-group > .dropdown-toggle {
+  //   padding-top: 4px;
+  //   padding-bottom: 4px;
+  //   min-height: 26px;
+  // }
+}

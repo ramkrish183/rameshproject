@@ -1,0 +1,43 @@
+{
+  "name": "highcharts-amd",
+  "author": {
+    "name": "highslide-software"
+  },
+  "description": "Highcharts JS is a JavaScript charting library based on SVG and VML rendering.",
+  "version": "3.0.2",
+  "main": [
+    "js/highcharts.src.js",
+    "js/highstock.src.js",
+    "js/highcharts-more.src.js"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    ".*",
+    "Gruntfile.js",
+    "exporting-server",
+    "fiddles",
+    "gfx",
+    "lib",
+    "samples",
+    "studies",
+    "tools",
+    "ant",
+    "build.*",
+    "invalidations.txt",
+    "whats-new.htm"
+  ],
+  "dependencies": {
+    "jquery": "dxc/require-jquery#~1.9.1"
+  },
+  "gitHead": "e63862d99d576a9197aaf96fadc3eefa155e98bd",
+  "readme": "#Highcharts JS\nHighcharts JS is a JavaScript charting library based on SVG and VML rendering.\n\n* Official website:  [www.highcharts.com](http://www.highcharts.com)\n* Official download: [www.highcharts.com/download](http://www.highcharts.com/download)\n* Licensing: [www.highcharts.com/license](http://www.highcharts.com/license)\n* Support: [www.highcharts.com/support](http://www.highcharts.com/support)\n\n## Current branches\n**master**: As of 2013-03-06, the master branch holds the candidate for Highcharts 3.0 and Highstock 1.3.\n\n**rambera**: This branch contained the candidate for Highcharts 3.0 and Highstock 1.3 until 2013-03-16. After this date, this branch is abandoned and work will continue on the master branch.\n\n## Reporting issues\nWe use GitHub Issues as our official bug tracker. We strive to keep this a clean, maintainable and searchable record of our open and closed bugs, therefore we kindly ask you to obey some rules before reporting an issue:\n\n1. Make sure the report is accompanied by a reproducible demo. The ideal demo is created by forking [our standard jsFiddle](http://jsfiddle.net/highcharts/llexl/), adding your own code and stripping it down to an absolute minimum needed to demonstrate the bug.\n* Always add information on what browser it applies to, and other information needed for us to debug.\n* It may be that the bug is already fixed. Try your chart with our latest work from http://github.highcharts.com/master/highcharts.js before reporting.\n* For feature requests, tech support and general discussion, don't use GitHub Issues. See [www.highcharts.com/support](www.highcharts.com/support) for the appropriate channels.",
+  "readmeFilename": "readme.md",
+  "_id": "highcharts-amd@3.0.2",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/highcharts-amd.git"
+  }
+}

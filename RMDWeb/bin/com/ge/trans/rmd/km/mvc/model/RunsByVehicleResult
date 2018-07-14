@@ -1,0 +1,40 @@
+package com.ge.trans.rmd.km.mvc.model;
+
+/**
+ * VO for Runs selected by Vehicle
+ * @author 212556286
+ */
+import com.ge.trans.rmd.common.beans.RMDBaseBean;
+
+public class RunsByVehicleResult  extends RMDBaseBean {
+
+	private String runId;
+	private String runDate;
+	private String vehicleId;
+	private String vehicle;
+	
+	public String getRunId() {
+		return runId;
+	}
+	public void setRunId(String runId) {
+		this.runId = runId;
+	}
+	public String getRunDate() {
+		return runDate;
+	}
+	public void setRunDate(String runDate) {
+		this.runDate = runDate;
+	}
+	public String getVehicleId() {
+		return vehicleId;
+	}
+	public void setVehicleId(String vehicleId) {
+		this.vehicleId = vehicleId;
+	}
+	public String getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+}

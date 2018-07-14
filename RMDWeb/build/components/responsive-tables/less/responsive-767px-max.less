@@ -1,0 +1,20 @@
+//
+// Responsive Table: Phone ( landscape and portrait )
+// Show table elements classed 'essential'
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+
+ table.responsive td,
+  table.responsive th {
+    display:none;
+    visibility: collapse;
+  }
+
+  table.responsive td.essential,
+  table.responsive th.essential {
+    display: table-cell;
+    visibility: visible;
+  }
+
+}

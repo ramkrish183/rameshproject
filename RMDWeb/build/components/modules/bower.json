@@ -1,0 +1,33 @@
+{
+  "name": "modules",
+  "description": "Collection of module types for use with ge-bootstrap.",
+  "version": "v0.5.3",
+  "main": [
+    "less/modules.less",
+    "less/modules-responsive.less",
+    "js/modules.js"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    ".*",
+    "Gruntfile.js",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0",
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "jqueryui-sortable-amd": "dxc/jqueryui-sortable-amd#~1.10.2"
+  },
+  "gitHead": "6d79c3a6bf5046511bfee4b69584d1d6a9a92476",
+  "readme": "# Module\n",
+  "readmeFilename": "README.md",
+  "_id": "modules@0.5.3",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/modules.git"
+  }
+}

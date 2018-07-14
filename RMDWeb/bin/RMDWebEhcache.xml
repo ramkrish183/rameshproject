@@ -1,0 +1,151 @@
+<ehcache>
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cacheManagerPeerProviderFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+		properties="peerDiscovery=manual,
+		rmiUrls=//${distcache.host}/RMDlookUpCache
+|//${distcache.host}/RMDRolePrivilegeCache
+|//${distcache.host}/RMDRoleSecNavCache
+|//${distcache.host}/RMDSystemParamCache
+|//${distcache.host}/UrgencyOfRepairCache" />
+
+	<cacheManagerPeerListenerFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+		properties="hostName=${cache.host},
+                     port=${cache.port},
+                     socketTimeoutMillis=2000" />
+
+	<cache name="RMDlookUpCache" eternal="false" maxElementsInMemory="1500"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=true,
+            replicateRemovals=true" />
+	</cache>
+	<cache name="virtualParametersCache" eternal="false"
+		maxElementsInMemory="10000" timeToIdleSeconds="3600"
+		timeToLiveSeconds="86400" />
+	<cache name="graphNameCache" eternal="false" maxElementsInMemory="500"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="mpParmDetailsCache" eternal="false"
+		maxElementsInMemory="500" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="logicalOperatorsCache" eternal="false"
+		maxElementsInMemory="10000" timeToIdleSeconds="3600"
+		timeToLiveSeconds="86400" />
+	<cache name="RMDTimeZoneCache" eternal="false"
+		maxElementsInMemory="200" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDRolePrivilegeCache" eternal="false"
+		maxElementsInMemory="500" timeToIdleSeconds="3600" timeToLiveSeconds="86400">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=true,
+            replicateRemovals=true" />
+	</cache>
+	<cache name="RMDRoleSecNavCache" eternal="false"
+		maxElementsInMemory="500" timeToIdleSeconds="3600" timeToLiveSeconds="86400">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=true,
+            replicateRemovals=true" />
+	</cache>
+	<cache name="RMDEstRepairTimeCache" eternal="false"
+		maxElementsInMemory="20" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDUrgencyOfRepairCache" eternal="false"
+		maxElementsInMemory="25" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCaseTypeCache" eternal="false"
+		maxElementsInMemory="50" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDModelsForFilterCache" eternal="false"
+		maxElementsInMemory="500" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDFleetsForFilterCache" eternal="false"
+		maxElementsInMemory="500" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDApprovedRxTitlesCache" eternal="false"
+		maxElementsInMemory="10000" timeToIdleSeconds="3600"
+		timeToLiveSeconds="86400" />
+	<cache name="RMDRxTitlesLiteCache" eternal="false"
+		maxElementsInMemory="6000" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDNonActionableRxTitlesCache" eternal="false"
+		maxElementsInMemory="5000" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCustomerCache" eternal="false"
+		maxElementsInMemory="250" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDSystemParamCache" eternal="false"
+		maxElementsInMemory="1000" timeToIdleSeconds="3600" timeToLiveSeconds="86400">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=true,
+            replicateRemovals=true" />
+	</cache>
+	<cache name="PPCountryStateCache" eternal="false"
+		maxElementsInMemory="200" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="PPCityCache" eternal="false" maxElementsInMemory="200"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="PPCustRoadInitialCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDAllFleetsCache" eternal="false"
+		maxElementsInMemory="250" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDAllRegionsCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="CustLookupCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="ShopDetailsCache" eternal="false"
+		maxElementsInMemory="250" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RestrictedAlertShopCache" eternal="false"
+		maxElementsInMemory="25" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="FaultOriginCache" eternal="false"
+		maxElementsInMemory="200" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="ModelDetailsCache" eternal="false"
+		maxElementsInMemory="300" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDControllerCache" eternal="false"
+		maxElementsInMemory="50" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCreatorCache" eternal="false"
+		maxElementsInMemory="1000" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="UrgencyOfRepairCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+            replicatePuts=true,
+            replicateUpdates=true,
+            replicateUpdatesViaCopy=true,
+            replicateRemovals=true" />
+	</cache>
+	<cache name="RMDNotifyFlagsCache" eternal="false"
+		maxElementsInMemory="50" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDThresholdCache" eternal="false"
+		maxElementsInMemory="25" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDStateProvinceCache" eternal="false"
+		maxElementsInMemory="300" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDAurizonCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RuleFunctions" eternal="false" maxElementsInMemory="20"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="PerformanceCheckValues" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCustNameRNH" eternal="false" maxElementsInMemory="100"
+		timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDControllerConfigsCache" eternal="false"
+		maxElementsInMemory="300" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCountryListCache" eternal="false"
+		maxElementsInMemory="50" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCountryStatesCache" eternal="false"
+		maxElementsInMemory="100" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="RMDCountryTimezonesCache" eternal="false"
+		maxElementsInMemory="30" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+	<cache name="OHVMonthlyAndQuarterListCache" eternal="false"
+		maxElementsInMemory="30" timeToIdleSeconds="3600" timeToLiveSeconds="86400" />
+</ehcache>

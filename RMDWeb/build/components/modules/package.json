@@ -1,0 +1,19 @@
+{
+  "name": "modules",
+  "description": "Collection of module types for use with ge-bootstrap.",
+  "author": "General Electric",
+  "version": "0.5.3",
+  "private": true,
+  "homepage": "http://gesdh.com/",
+  "dependencies": {
+    "grunt": "~0.4.0",
+    "bower": "~0.10.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-less": "~0.6.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-bower-requirejs": "git+https://github.com/robdodson/grunt-bower-requirejs.git#082b41953587626c51722e90d3943cd47bf381c3"
+  },
+  "scripts": {
+    "postinstall": "grunt"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "multi-step-navigation",
+  "version": "0.1.7",
+  "main": [
+    "js/multi-step-navigation.js",
+    "less/multi-step-navigation.less",
+    "less/multi-step-navigation-responsive.less"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "twitter-bootstrap-wizard": "dxc/twitter-bootstrap-wizard#~1.0.1",
+    "ge-bootstrap": "dxc/ge-bootstrap#~0.6.0",
+    "requirejs": "~2.1.6",
+    "jquery": "~1.10.0"
+  },
+  "devDependencies": {
+    "jasmine": "~1.3.1"
+  },
+  "gitHead": "a99ed1e28835b16fe890e8c82425761e8653b785",
+  "readme": " Multi-Step Navigation\n===============\n\n## Introduction\n\nMulti-Step-Navigation is a progressive disclosure component based on [twitter-bootstrap-wizard](https://github.com/VinceG/twitter-bootstrap-wizard)\n\n## Basic Usage\n\nAdd .multi-step-nav to your corresponding DOM element\n\n    <div class=\"span8 multi-step-nav\">\n      <div class=\"navbar\">\n        <div class=\"navbar-inner\">\n          <div class=\"container\">\n            <ul>\n              <li><a href=\"#tab1\" data-toggle=\"tab\"><i class=\"icon-ok-circle\"></i> Step 1</a></li>\n              <li><a href=\"#tab2\" data-toggle=\"tab\"><i class=\"icon-ok-circle\"></i> Step 2</a></li>\n              <li><a href=\"#tab3\" data-toggle=\"tab\"><i class=\"icon-ok-circle\"></i> Step 3</a></li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\nTrigger plugin execution in your js\n\n    $('.multi-step-nav').multiStepNavigation();\n\n## Advanced Usage\n\nTwitter Bootstrap Wizard\n============================\n\nThis Twitter Bootstrap plugin builds a wizard using a formatted tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into each step individually.\n\n<a href=\"http://vadimg.com/twitter-bootstrap-wizard-example/\" target=\"_blank\">Website & Demo</a>\n\n<a href='https://twitter.com/gabrielva' target='_blank'>Follow @gabrielva</a>\n\nCode Examples\n-------------\n\n```javascript\n//basic wizard\n$(document).ready(function() {\n  $('#rootwizard').bootstrapWizard();\n});\n```\n\n```javascript\n//wizard with options and events\n$(document).ready(function() {\n  $('#rootwizard').bootstrapWizard({\n    tabClass: 'nav nav-pills',\n    onNext: function(tab, navigation, index) {\n      alert('next');\n      }\n  });\n});\n```\n\n```javascript\n//calling a method\n$('#rootwizard').bootstrapWizard('show',3);\n```\n\nOptions\n-------\n<table class=\"table table-bordered\">\n  <thead>\n    <tr>\n      <th>Key</th>\n      <th>Default</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>tabClass</td>\n      <td>'nav nav-pills'</td>\n      <td>ul navigation class</td>\n    </tr>\n    <tr>\n      <td>nextSelector</td>\n      <td>'.wizard li.next'</td>\n      <td>next element selector</td>\n    </tr>\n    <tr>\n      <td>previousSelector</td>\n      <td>'.wizard li.previous'</td>\n      <td>previous element selector</td>\n    </tr>\n    <tr>\n      <td>firstSelector</td>\n      <td>'.wizard li.first'</td>\n      <td>first element selector</td>\n    </tr>\n    <tr>\n      <td>lastSelector</td>\n      <td>'.wizard li.last'</td>\n      <td>last element selector</td>\n    </tr>\n  </tbody>\n</table>\n\nEvents\n------\n<table class=\"table table-bordered\">\n  <thead>\n    <tr>\n      <th>Key</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>onInit</td>\n      <td>Fired when plugin is initialized</td>\n    </tr>\n    <tr>\n      <td>onShow</td>\n      <td>Fired when plugin data is shown</td>\n    </tr>\n    <tr>\n      <td>onNext</td>\n      <td>Fired when next button is clicked (return false to disable moving to the next step)</td>\n    </tr>\n    <tr>\n      <td>onPrevious</td>\n      <td>Fired when previous button is clicked (return false to disable moving to the previous step)</td>\n    </tr>\n    <tr>\n      <td>onFirst</td>\n      <td>Fired when first button is clicked (return false to disable moving to the first step)</td>\n    </tr>\n    <tr>\n      <td>onLast</td>\n      <td>Fired when last button is clicked (return false to disable moving to the last step)</td>\n    </tr>\n    <tr>\n      <td>onTabClick</td>\n      <td>Fired when a tab is clicked (return false to disable moving to that tab and showing it's contents)</td>\n    </tr>\n    <tr>\n      <td>onTabShow</td>\n      <td>Fired when a tab content is shown (return false to disable showing that tab content)</td>\n    </tr>\n  </tbody>\n</table>\n\nMethods\n-------\n<table class=\"table table-bordered\">\n  <thead>\n    <tr>\n      <th>Key</th>\n      <th>Parameters</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>next</td>\n      <td></td>\n      <td>Moves to the next tab</td>\n    </tr>\n    <tr>\n      <td>previous</td>\n      <td></td>\n      <td>Moves to the previous tab</td>\n    </tr>\n    <tr>\n      <td>first</td>\n      <td></td>\n      <td>Jumps to the first tab</td>\n    </tr>\n    <tr>\n      <td>last</td>\n      <td></td>\n      <td>Jumps to the last tab</td>\n    </tr>\n    <tr>\n      <td>show</td>\n      <td>zero based index</td>\n      <td>Jumps to the specified tab</td>\n    </tr>\n    <tr>\n      <td>currentIndex</td>\n      <td></td>\n      <td>Returns the zero based index number for the current tab</td>\n    </tr>\n    <tr>\n      <td>navigationLength</td>\n      <td></td>\n      <td>Returns the number of tabs</td>\n    </tr>\n    <tr>\n      <td>enable</td>\n      <td>zero based index</td>\n      <td>Enables a tab, allows a user to click it (removes .disabled if the item has that class)</td>\n    </tr>\n    <tr>\n      <td>disable</td>\n      <td>zero based index</td>\n      <td>Disables a tab, disallows a user to click it (adds .disabled to the li element)</td>\n    </tr>\n    <tr>\n      <td>display</td>\n      <td>zero based index</td>\n      <td>Displays the li element if it was previously hidden</td>\n    </tr>\n    <tr>\n      <td>hide</td>\n      <td>zero based index</td>\n      <td>Hides the li element (will not remove it from the DOM)</td>\n    </tr>\n    <tr>\n      <td>remove</td>\n      <td>zero based index, optinal bool remove tab-pane element or not false by default</td>\n      <td>Removes the li element from the DOM if second argument is true will also remove the tab-pane element</td>\n    </tr>\n  </tbody>\n</table>\n",
+  "readmeFilename": "Readme.md",
+  "_id": "multi-step-navigation@0.1.7",
+  "description": "Multi-Step Navigation ===============",
+  "repository": {
+    "type": "git",
+    "url": "http://3.39.74.92:7990/scm/dxc/multi-step-navigation.git"
+  }
+}

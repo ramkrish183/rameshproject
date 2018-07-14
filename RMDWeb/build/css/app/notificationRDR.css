@@ -1,0 +1,121 @@
+.notificationCounterBadge {
+  background-color: #fa3e3e;
+  border-radius: 3px;
+  color: white;
+ 
+  padding: 2px 3px;
+  font-size: 12px;
+  
+  position: absolute; /* Position the badge within the relatively positioned button */ 
+  top: 0px;
+  right: 3px;
+  
+  height: 11px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
+}
+
+.customList {
+	padding-top:0px;padding-bottom:0px;max-height: 200px;overflow: auto;
+}
+
+#clearNotifs {
+	top: 27px;
+    cursor: pointer;
+    width: 237px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    text-align: center;	
+}
+
+#rdr-notifications{
+	overflow:auto;
+}
+
+#rdr-notifications::-webkit-scrollbar {
+    width: 6px;
+    opacity: 0.1; 
+}
+#rdr-notifications::-webkit-scrollbar:hover {
+    width: 10px !important;
+}
+
+#rdr-notifications::-webkit-scrollbar-track:hover {
+    background: #fff; 
+}
+ 
+
+#rdr-notifications::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius:10px;
+}
+
+#rdr-notifications:hover::-webkit-scrollbar {
+    width: 6px;
+    opacity: 0.1; 
+}
+#rdr-notifications:hover::-webkit-scrollbar:hover {
+    width: 10px !important;
+}
+
+#rdr-notifications:hover::-webkit-scrollbar-track:hover {
+    background: #f1f1f1; 
+}
+ 
+
+#rdr-notifications:hover::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius:10px;
+}
+
+#rdr-notifications:hover::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.loaderItem {
+	width: 231px;
+  	justify-content: center;
+  	display: flex;
+  	padding-top: 3px;
+  	padding-bottom: 3px;
+}
+
+.notificationRDRLoader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #3498db;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.newsCounterBadge {
+  background-color: #fa3e3e;
+  border-radius: 3px;
+  color: white;
+ 
+  padding: 2px 3px;
+  font-size: 12px;
+  
+  position: absolute; /* Position the badge within the relatively positioned button */ 
+  top: 0px;
+  right: 3px;
+  
+  height: 11px;
+  justify-content: center;
+  display: block;
+  align-items: center;
+}
